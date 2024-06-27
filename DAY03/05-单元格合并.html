@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table align="center" bgcolor="black" cellspacing="1px">
+        <!-- 表格标题 -->
+         <caption>信息表</caption>
+        <!-- 第一行 -->
+         <tr bgcolor="white" align="center">
+             <!-- 列 -->
+              <!-- 水平方向单元格合并colspan，数值为几就合并几个单元格，
+               但是对应的多余的单元格需要删除，否则别的行会有多余的单元格出现 -->
+             <th colspan="2">姓 名</th>
+             <!-- 垂直方向上单元格合并rowspan，数值为几就合并几个单元格，
+               但是对应的多余的单元格需要删除，否则别的行会有多余的单元格出现，
+               第25行代码需要注释或者删掉 -->
+             <td rowspan="2">年龄</td>
+         </tr>
+         <!-- 第二行 -->
+         <tr bgcolor="white" align="center">
+            <!-- 列 -->
+            <td>张清闻</td>
+            <td>男</td>
+            <!-- <td>18</td> -->
+        </tr>
+     </table>
+</body>
+</html>

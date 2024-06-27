@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 表单标签 action提交到对应的地址，获取对应的数据-->
+     <form action="www.baidu.com">
+        <!-- fieldset -->
+         <fieldset style="width: 600px;margin: 0 auto;">
+            <legend>注册信息</legend>
+            <!-- 用户名 -->
+             姓名:<input type="text" name="username" id="" placeholder="请输入用户名">
+            <!-- 密码 -->
+             <br>
+             密码:<input type="password" name="pwd" id="" placeholder="请输入密码">
+            <!-- 性别 radio选择器，name设置为相同的即互斥，传回的值用value设置-->
+             <br>
+             请选择性别:
+             <!-- 将文字与标签进行绑定 for属性与id绑定就行 -->
+             <label for="men">
+                <input id="men" type="radio" name="gender" value="male">男
+              </label>
+              <label for="women">
+                <input id="women" type="radio" name="gender" value="female">女
+            </label>
+            <!-- 兴趣爱好 -->
+             <br>
+             请选择兴趣爱好：
+             <input type="checkbox" name="hobby" id="" value="篮球">篮球
+             <input type="checkbox" name="hobby" id="" value="足球">足球
+             <input type="checkbox" name="hobby" id="" value="台球">台球
+             <!-- 文件上传 file属性可以选择本地图片上传 -->
+             <br>
+             请上传头像：
+             <input type="file" name="ico">
+            <!-- 提交 -->
+             <br>
+             <input type="submit" value="提交">
+         </fieldset>
+     </form>
+</body>
+</html>
