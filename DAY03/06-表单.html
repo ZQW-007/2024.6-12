@@ -19,7 +19,7 @@
             <!-- 性别 radio选择器，name设置为相同的即互斥，传回的值用value设置-->
              <br>
              请选择性别:
-             <!-- 将文字与标签进行绑定 for属性与id绑定就行 -->
+            <!-- 将文字与标签进行绑定 for属性与id绑定就行 -->
              <label for="men">
                 <input id="men" type="radio" name="gender" value="male">男
               </label>
@@ -32,13 +32,29 @@
              <input type="checkbox" name="hobby" id="" value="篮球">篮球
              <input type="checkbox" name="hobby" id="" value="足球">足球
              <input type="checkbox" name="hobby" id="" value="台球">台球
-             <!-- 文件上传 file属性可以选择本地图片上传 -->
+            <!-- 文件上传 file属性可以选择本地图片上传 -->
              <br>
              请上传头像：
              <input type="file" name="ico">
+             <br>
+            <!-- 分组 -->
+             <select name="city" id="">
+                <optgroup label="山西省">
+                    <!-- 具体的分组数据 -->
+                    <option value="ty">太原</option>
+                    <option value="ll">吕梁</option>
+                    <option value="jz">晋中</option>
+                </optgroup>
+             </select>
+             <br>
+             <textarea name="" id="" cols="30px" rows="10px"></textarea>
+            <!-- 隐藏域 -->
+             <input type="hidden" name="text" value="text">
             <!-- 提交 -->
              <br>
              <input type="submit" value="提交">
+            <!-- 重置按钮 -->
+             <input type="reset" value="重置">
          </fieldset>
      </form>
 </body>
