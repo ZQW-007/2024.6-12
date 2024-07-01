@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 内联>id>类>标签>通配符>继承>浏览器默认 */
+        .div1{
+            color: red;
+        }
+        /* id选择器，优先级高 */#div11{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1" id="div11">div</div>
+</body>
+</html>

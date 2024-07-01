@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 在······之后 */
+        p::after{
+            /* 内容 */
+            content: '我是后加的内容';
+        }
+        /* 在······之前 */
+        p::before{
+            /* 内容 */
+            content: '我是之前的内容';
+        }
+        /* 给第一个字设计样式 */
+            p::first-letter{
+                color: blue;
+                font-size: 30px;        
+        }           
+        /* 给第一行设计样式 */
+        p::first-line{
+            color: red;
+            font-size: 30px;        
+        }
+    </style>
+</head>
+<body>
+    <p>
+        我是 p 标签 我是 p 标签 我是 p 标签 我是 p 标签 我是 p 标签 我是 p 标签
+        我是 p 标签 我是 p 标签 我是 p 标签 我是 p 标签 我是 p 标签 我是 p 标签
+        我是 p 标签 我是 p 标签 我是 p 标签 我是 p 标签 我是 p 标签 我是 p 标签
+        我是 p 标签 我是 p 标签 我是 p 标签 我是 p 标签 我是 p 标签 我是 p 标签
+    </p>
+</body>
+</html>

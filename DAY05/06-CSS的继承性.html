@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 继承性 */
+        .div1{
+            /* 背景颜色 */background-color: white;/* 不被继承 */
+            /* 文字颜色 */color: red;
+            /* 文字大小 */font-size: 25px;
+            /* 文本居中 */text-align: center;
+            /* 行高 */line-height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+        <a href="">123</a><!-- 不会继承 -->
+        <h1>456</h1><!-- 不会继承 -->
+    </div>
+</body>
+</html>
