@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 600px;
+            border: 5px solid black;
+        }
+        /* 解决父元素高度塌陷 */
+        .father::after{
+            /* 空白的内容 */
+            content: "";
+            /* 切换块级元素 */
+            display: block;
+            /* 清除浮动 */
+            clear: both;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+        <div class="son"></div>
+        <div class="son"></div>
+        <!-- 解决父元素高度塌陷问题 -->
+        <!-- <div style="clear: both;"></div> -->
+    </div>
+</body>
+</html>
