@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 父元素的样式 */
+        .father{
+        width: 500px;
+        height: 500px;
+        border: 1px solid red;
+        margin: 20px auto;
+        /* 设置为弹性布局 */
+        display: flex;
+    }
+    /* 子元素的样式 */
+    .son1,.son2,.son3{
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        font-size: 26px;
+        color: aliceblue;
+        }
+    .son1{
+        background-color: red;
+        /* 用于排序 */
+        /* order: 3; */
+    }
+    .son2{
+        background-color: blue;
+        /* 分配富裕空间 */
+        /* flex-grow: 1; */
+        /* 收缩空间,默认为1，等比例缩小；为0时不变 */
+        /* flex-shrink: 1; */
+        /* flex-shrink: 0; */
+        /* 设置子元素的高度，优先级高于width */
+        flex-basis: 200px;
+    }
+    .son3{
+        background-color: green;
+        /* flex: 1; */
+    }
+    .son3{
+        background-color: green;
+    }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son1">1</div>
+        <div class="son2">2</div>
+        <div class="son3">3</div>
+    </div>
+</body>
+</html>
