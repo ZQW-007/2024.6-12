@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 40px auto;        
+        }
+        ul li{
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            font-size: 20px;
+            text-align: center;
+            color: #000;
+            transition: margin-left 3s;
+        }
+        ul:hover li{
+            margin-left: 500px;
+        }
+            ul:hover li:nth-child(1){
+                transition-timing-function: linear;
+                }   
+            ul:hover li:nth-child(2){
+                transition-timing-function: ease;       
+                }   
+            ul:hover li:nth-child(3){
+                transition-timing-function: ease-in;       
+                }   
+            ul:hover li:nth-child(4){
+                transition-timing-function: ease-out;       
+                }   
+            ul:hover li:nth-child(5){
+                transition-timing-function: ease-in-out;
+                }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>linear</li>
+        <li>ease</li>
+        <li>ease-in</li>
+        <li>ease-out</li>
+        <li>ease-in-out</li>
+    </ul>
+</body>
+</html>

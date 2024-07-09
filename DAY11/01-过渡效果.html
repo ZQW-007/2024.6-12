@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 鼠标移开后恢复的样式 */
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 那些样式发生变化，变化持续时间 */
+            transition: width 2s, height 2s, background-color 2s;
+            /* 设置时间曲线 */
+            transition-timing-function: ease-in-out;
+            /* 设置延迟时间 */
+            transition-delay: 2s;
+        }
+        /* 当鼠标移入对应区域 样式发生变化 */
+        .div1:hover{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            /* 那些样式发生变化，变化持续时间 */
+            transition: width 2s, height 2s, background-color 2s;
+            /* 设置时间曲线 */
+            transition-timing-function: ease-in-out;
+            /* 设置延迟时间 */
+            transition-delay: 2s;
+        }
+        .div2{
+            border: 1px solid red;
+            text-align: center;
+            font-size: 30px;
+            /* 简写过渡 */
+            transition: font-size 2s;
+            transition-delay: 2s;
+        }
+        .div2:hover{
+            font-size: 50px;
+            transition: font-size 2s;
+            transition-delay: 2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2">山西农业大学</div>
+</body>
+</html>

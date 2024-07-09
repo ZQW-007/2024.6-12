@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 容器样式 */
+        .content{
+            width: 300px;
+            height: 500px;
+            margin: 40px auto;
+            background-color: antiquewhite;
+        }
+        /* 产品图片区域样式 */
+        .proImg{
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+            border-bottom: white 1px solid;
+        }
+        /* 图片样式 */
+        .proImg img{
+            width: 200px;
+            transition: transform 1s;
+        }
+        /* 鼠标悬停时图片样式 */
+        .proImg img:hover{
+            transform: scale(1.05)
+        }
+        /* 描述样式 */
+        .desc{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* 标题样式 */
+        .desc .title{
+            text-align: center;
+            width: 60%;
+            font-weight: bold;
+        }
+        /* 鼠标悬停时标题样式 */
+        .desc .title:hover{
+            color: #ffffff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- 产品图片 -->
+        <div class="proImg">
+            <img src="./bg.jpg" alt="多多">
+        </div>
+        <!-- 产品描述 -->
+        <div class="desc">
+            <div class="title">趣多多</div>
+        </div>
+    </div>
+</body>
+</html>

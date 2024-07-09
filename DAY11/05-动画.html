@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        /* 动画名称 */
+        animation-name: leftToright;
+        /* 持续时间 */
+        animation-duration: 5s;
+        /* 动画速度曲线 */
+        animation-timing-function: linear;
+        /* 动画延迟时间 */
+        /* animation-delay: 2s; */
+        /* 动画次数 */
+        animation-iteration-count: infinite;
+        /* 动画方向,往返 */
+        animation-direction: alternate; 
+        /* 动画填充模式---规定当动画不播放时（当动画完成时，或当动画有
+⼀个延迟未开始播放时），要应⽤到元素的样式 */  
+        /* animation-fill-mode: forwards;   */
+        /* 简写 */
+        /* animation: leftToright 5s linear infinite alternate forwards; */
+        }
+        .div1:hover{
+        /* 告诉系统当前动画是否需要暂停 */  
+        animation-play-state: paused;
+        }
+        /* 动画 */
+            @keyframes leftToright{
+                from {margin-left: 0px;}
+                to {margin-left: 400px;}}
+        /* @keyframes leftToright{
+                0% {margin-left: 0px;}
+                25%{margin-left: 100px;}
+                50% {margin-left: 200px;}
+                75% {margin-left: 300px;}
+                100% {margin-left: 400px;}
+        } */
+    </style>
+</head>
+<body>
+    <div class="div1"></divc>
+</body>
+</html>
