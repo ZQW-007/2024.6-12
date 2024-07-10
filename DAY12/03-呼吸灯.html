@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;  
+            padding: 0;
+        }
+        /* 容器样式 */
+        .content{
+            width: 500px;
+            height: 500px;
+            margin: 40px auto;
+            background-color: #00ff37;
+            /* 大圆居中，简单 */
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+        /* 大圆样式 */
+        .bigCircle{
+            width: 330px;
+            height: 330px;
+            border: 20px solid;
+            border-radius: 50%;
+            /* 小圆居中，简单 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 动画 */
+            animation: breathe 3s linear infinite alternate;
+        }
+        /* 小圆样式 */
+        .smallCircle{
+            width: 270px;
+            height: 270px;
+            border-radius: 50%;
+            border: 10px solid;
+            /* 动画 */
+            animation: breathe 3s linear infinite alternate;
+        }
+        /* 动画 */
+        @keyframes breathe{
+            0%{
+                transform: scale(0.6);
+                color: red;
+            }
+            25%{
+                transform: scale(0.7);
+                color: orange;
+            }
+            50%{
+                transform: scale(0.8);
+                color: yellow;
+            }
+            75%{
+                transform: scale(0.7);
+                color: orange;
+            }
+            100%{
+                transform: scale(0.6);
+                color: red
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="bigCircle">
+            <div class="smallCircle"></div>
+        </div>
+    </div>
+</body>
+</html>

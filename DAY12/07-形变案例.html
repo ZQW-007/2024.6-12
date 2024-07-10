@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 400px;
+            background-color: red;
+            margin: 50px auto;
+            /* 立体效果 */
+            perspective: 400px;
+        }
+        img{
+            /* 旋转中心点 */
+            transform-origin: bottom center;
+            transition: transform 1s;
+        }
+        img:hover{
+            /* 旋转 */
+            transform: rotatex(-70deg);
+        }
+    </style>
+</head>
+<body>
+    <div><img src="./pk.png" alt=""></div>
+</body>
+</html>
