@@ -1,0 +1,7 @@
+/*css/mobile.css*/
+/* <468px */
+/*默认布局：线性布局*/
+.container>div{
+  height: 300px;
+  border: 10px solid green;
+}

@@ -1,0 +1,13 @@
+/*css/pc.css*/
+/* >1024px */
+/*电脑端的css*/
+.container {
+  height: 300px;
+  margin: 0 auto;
+  display: flex;
+}
+.container div{
+  flex: 0 1 25%;
+  border: 10px solid green;
+}
+
