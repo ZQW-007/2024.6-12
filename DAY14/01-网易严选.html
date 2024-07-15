@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入 iconfont 字体图标 -->
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4621073_94ml83a8iqp.css">
+    <style>
+        /* 清除默认样式 */
+        *{
+            margin: 0;  
+            padding: 0;
+            list-style: none;
+        }
+        /* 根节点的样式 */
+        body{
+            width: 100%;
+        }
+        /* 主容器的样式 */
+        .container{
+            /* 最小宽度 */
+            min-width: 1150px;
+            height: 2000px;
+            background-color: #31af72;
+        }
+        /* 头部区域的样式 */
+        .header{
+            width: 100%;
+            height: 176px;
+            background-color: #888888;
+        }
+        /* 顶部导航栏区域的样式 */
+        .header .topnav{
+            width: 100%;
+            height: 36px;
+            background-color: #333333;
+        }
+        /* 顶部导航栏的样式 */
+        .header .nav{
+            width: 1090px;
+            height: 36px;
+            background-color: #333333;
+            margin: 0 auto;
+            display: flex;
+            justify-content: right;
+        }
+        /* 每一个导航子选项样式 */
+        .nav>div{
+            line-height: 36px;
+            cursor: pointer;
+            font-size: 12px;
+            color: #cccccc;
+        }
+
+
+        /* 第四个div设置样式 */
+        .nav>div:nth-child(4){
+            color: #cc9756;
+            position: relative;
+        }
+        /* 第四个div下拉列表的样式 */
+        .nav>div:nth-child(4) .selectMenu{
+            width: 83px;
+            height: 100px;
+            background-color: #ffffff;
+            position: absolute;
+            left: 10px;
+            display: none;
+        }
+        /* 鼠标移入时显示下拉列表 */
+        .nav>div:nth-child(4):hover .selectMenu{
+            display: block;
+        }
+        /* 第四个div下拉列表的子选项样式 */
+         .selectMenu>div{
+            width: 70%;
+            line-height: 33px;
+            margin: 0 auto;
+            text-align: center;
+            color: #999999;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        /* 每一个子选项分割线样式 */
+        .selectMenu>div:nth-child(n+3){
+            border-top: 1px solid gainsboro;
+        }
+
+
+        /* 第五个div样式 */
+        .nav>div:nth-child(5){
+            position: relative;
+        }
+        /* 第五个div下拉列表的样式 */
+        .nav>div:nth-child(5) .selectMenu1{
+            width: 83px;
+            height: 135px;
+            background-color: #ffffff;
+            position: absolute;
+            left: 10px;
+            display: none;
+        }
+        /* 鼠标移入时显示下拉列表 */
+        .nav>div:nth-child(5):hover .selectMenu1{
+            display: block;
+        }
+        /* 第五个div下拉列表的子选项样式 */
+         .selectMenu1>div{
+            width: 70%;
+            line-height: 33px;
+            margin: 0 auto;
+            text-align: center;
+            color: #999999;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        /* 每一个子选项分割线样式 */
+        .selectMenu1>div:nth-child(n+3){
+            border-top: 1px solid gainsboro;
+        }
+
+
+        /* 鼠标移入时改变文字颜色 */
+         .nav>div:hover{
+            color: #ffffff;
+        }
+        /* 每一个导航子选项前边框样式 */
+         .nav>div:nth-child(n+2)::before{
+            content: '';
+            display: inline-block;
+            height: 16px;
+            border-left: 1px solid #5c5c5c;
+            vertical-align: middle;/* 元素垂直居中 */
+            margin: 0 10px;
+        }
+        /* 字体图标的样式 */
+        .icon-xiangxiajiantou{
+            font-size: 10px;
+        }
+        .icon-shouji-copy{
+            font-size: 11px;
+            color: #ffffff;
+        }
+        .icon-xiangxiasanjiao{
+            color: rgb(255, 255, 255);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            margin-left: -8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 主容器 -->
+     <div class="container">
+        <!-- 头部区域 -->
+         <div class="header">
+            <!-- 顶部导航栏区域 -->
+              <div class="topnav">
+                <!-- 导航栏 -->
+                  <div class="nav">
+                    <div>登录/注册</div>
+                    <div>我的订单</div>
+                    <div>甄选家</div>
+
+                    <div>企业采购 <i class="iconfont icon-xiangxiajiantou"></i>
+                        <!-- 下拉列表 -->
+                        <div class="selectMenu">
+                            <i class="iconfont icon-xiangxiasanjiao"></i>
+                            <!-- 下拉列表 -->
+                            <div>严选智采</div>
+                            <div>企业购</div>
+                            <div>联系我们</div>
+                        </div>
+                    </div>
+
+                    <div>客户服务 <i class="iconfont icon-xiangxiajiantou"></i>
+                        <!-- 下拉列表 -->
+                        <div class="selectMenu1">
+                            <i class="iconfont icon-xiangxiasanjiao"></i>
+                            <!-- 下拉列表 -->
+                            <div>在线客服</div>
+                            <div>帮助中心</div>
+                            <div>商务合作</div>
+                            <div>开放平台</div>
+                        </div>
+                    </div>
+                    <div><i class="iconfont icon-shouji-copy"></i> APP</div>
+                  </div>
+              </div>
+            <!-- 搜索区域 -->
+              <div class="search"></div>
+            <!-- 横向导航栏菜单 -->
+              <div class="menu"></div>
+         </div>
+        <!-- 内容区域 -->
+         <div class="content"></div>
+        <!-- 底部区域 -->
+         <div class="footer"></div>
+     </div>
+</body>
+</html>
