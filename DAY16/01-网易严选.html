@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入 iconfont 字体图标 -->
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4621073_94ml83a8iqp.css">
+    <style>
+        /* 清除默认样式 */
+        *{
+            margin: 0;  
+            padding: 0;
+            list-style: none;
+        }
+        /* 根节点的样式 */
+        body{
+            width: 100%;
+        }
+        /* 主容器的样式 */
+        .container{
+            /* 最小宽度 */
+            min-width: 1150px;
+            height: 2000px;
+        }
+        /* 头部区域的样式 */
+        .header{
+            width: 100%;
+            height: 176px;
+        }
+        /* 顶部导航栏区域的样式 */
+        .header .topnav{
+            width: 100%;
+            height: 36px;
+            background-color: #333333;
+        }
+        /* 顶部导航栏的样式 */
+        .header .nav{
+            width: 1090px;
+            height: 36px;
+            background-color: #333333;
+            margin: 0 auto;
+            display: flex;
+            justify-content: right;
+        }
+        /* 每一个导航子选项样式 */
+        .nav>div{
+            line-height: 36px;
+            cursor: pointer;
+            font-size: 12px;
+            color: #cccccc;
+        }
+
+
+        /* 第四个div设置样式 */
+        .nav>div:nth-child(4){
+            color: #cc9756;
+            position: relative;
+        }
+        /* 第四个div下拉列表的样式 */
+        .nav>div:nth-child(4) .selectMenu{
+            width: 83px;
+            height: 100px;
+            background-color: #ffffff;
+            position: absolute;
+            left: 10px;
+            display: none;
+        }
+        /* 鼠标移入时显示下拉列表 */
+        .nav>div:nth-child(4):hover .selectMenu{
+            display: block;
+        }
+        /* 第四个div下拉列表的子选项样式 */
+         .selectMenu>div{
+            width: 70%;
+            line-height: 33px;
+            margin: 0 auto;
+            text-align: center;
+            color: #999999;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        /* 每一个子选项分割线样式 */
+        .selectMenu>div:nth-child(n+3){
+            border-top: 1px solid gainsboro;
+        }
+
+
+        /* 第五个div样式 */
+        .nav>div:nth-child(5){
+            position: relative;
+        }
+        /* 第五个div下拉列表的样式 */
+        .nav>div:nth-child(5) .selectMenu1{
+            width: 83px;
+            height: 135px;
+            background-color: #ffffff;
+            position: absolute;
+            left: 10px;
+            display: none;
+        }
+        /* 鼠标移入时显示下拉列表 */
+        .nav>div:nth-child(5):hover .selectMenu1{
+            display: block;
+        }
+        /* 第五个div下拉列表的子选项样式 */
+         .selectMenu1>div{
+            width: 70%;
+            line-height: 33px;
+            margin: 0 auto;
+            text-align: center;
+            color: #999999;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        /* 每一个子选项分割线样式 */
+        .selectMenu1>div:nth-child(n+3){
+            border-top: 1px solid gainsboro;
+        }
+
+
+        /* 第六个div样式 */
+        .nav>div:nth-child(6){
+            position: relative;
+        }
+        /* 第六个div下拉列表的样式 */
+        .nav>div:nth-child(6) .selectMenu2{
+            width: 130px;
+            height: 135px;
+            background-color: #ff0000;
+            position: absolute;
+            left: -10px;
+            display: none;
+        }
+        /* 鼠标移入时显示下拉列表 */
+        .nav>div:nth-child(6):hover .selectMenu2{
+            display: block;
+        }
+        /* 第六个div下拉列表的子选项样式 */
+         .selectMenu2 .img1{
+            margin: 10px 10px 0 10px;
+        }
+         .selectMenu2 .text{
+            width: 70%;
+            line-height: 1px;
+            margin: 0 auto;
+            text-align: center;
+            color: #999999;
+            font-size: 12px;
+            cursor: pointer;
+         }
+
+
+        /* 鼠标移入时改变文字颜色 */
+         .nav>div:hover{
+            color: #ffffff;
+        }
+        /* 每一个导航子选项前边框样式 */
+         .nav>div:nth-child(n+2)::before{
+            content: '';
+            display: inline-block;
+            height: 16px;
+            border-left: 1px solid #5c5c5c;
+            vertical-align: middle;/* 元素垂直居中 */
+            margin: 0 10px;
+        }
+        /* 字体图标的样式 */
+        .icon-xiangxiajiantou{
+            font-size: 10px;
+        }
+        .icon-shouji-copy{
+            font-size: 11px;
+            color: #ffffff;
+        }
+        .icon-xiangxiasanjiao{
+            color: rgb(255, 255, 255);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            margin-left: -8px;
+        }
+
+
+        /* 搜索区域的样式 */
+         .search{
+            width: 1090px;
+            height: 110px;
+            margin: 0 auto;
+            display: flex;
+        }
+        /* logo区域样式 */
+         .search .logo{
+            width: 20%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        /* logo中img样式 */
+         .logo img{
+            width: 100%;
+        }
+        /* 搜索框样式 */
+         .search .sInput{
+            width: 60%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .sInput .input{
+            width: 530px;
+            height: 30px;
+            display: flex;
+            margin-top: 20px;
+        }
+        /* 左侧搜索栏样式 */
+        .input input{
+            width: 80%; 
+            height: 38px;   
+            box-sizing: border-box;
+            border: 1px solid #cc9756;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            outline: none;
+            /* 背景图片属性 icon*/
+            background-image: url('./1234.jpg');
+            background-repeat: no-repeat;   
+            background-position: left 10px center; 
+            background-size: 16px 16px;
+            padding-left: 38px;
+        }
+        /* 右侧按钮样式 */
+         .input div{
+            width: 20%;
+            height: 38px;
+            background-color: #cc9756;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            text-align: center;
+            line-height: 38px;
+            color: #ffffff;
+            font-size: 16px;
+        }
+        /* 按钮透明度 */
+        .input div:hover{
+            opacity: 0.8;
+        }
+        /* 搜索区域导航栏样式 */
+        .sInput .snav{
+            width: 400px;
+            height: 20px;
+            margin-top: -15px;
+            margin-left: -100px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        /* 搜索区域导航栏每一个div样式 */
+         .snav div{
+            text-align: center;
+            color: #999999;
+            font-size: 10px;
+            cursor: pointer;
+        }
+        /* 第二个div颜色改变 */
+         .snav>div:nth-child(2){
+            color: #cc9756;
+        }
+        /* 鼠标移入时改变文字颜色 */
+        .snav>div:hover{
+            color: #cc9756;
+        }
+        /* 每一个导航子选项前边框样式 */
+         .snav>div:nth-child(n+2)::before{
+            content: '';
+            display: inline-block;
+            height: 12px;
+            border-left: 1px solid #999999;
+            vertical-align: middle;/* 元素垂直居中 */
+            margin: 0 10px;
+        }
+
+
+        /* 购物车样式 */
+         .search .cart{
+            width: 20%;
+            height: 100%;
+            display: flex;
+            align-items: center;    
+            justify-content: center;
+        }
+        /* 购物车图标整体样式 */
+        .cart .icon{
+            width: 60%;
+            height: 40px;
+            border: 1px solid #cc9756;
+            line-height: 40px;  
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 20px;
+            color: #cc9756;
+        }
+        /* 购物车数量的样式 */
+        .icon .count{
+            width: 16px;    
+            height: 16px;  
+            line-height: 16px;
+            background-color: red;
+            border-radius: 50%;
+            text-align: center;
+            color: white;        
+        }
+
+
+        /* 横向导航栏菜单样式 */
+         .menu{
+            width: 1090px;
+            height: 30px;
+            margin: 0 auto;
+        }
+        /* 菜单栏样式 */
+         .menu .menulist{
+            width: 100%;    
+            height: 100%;   
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;
+        }
+        /* 设置列表项样式 */
+         .menulist li a{
+            text-decoration: none;
+            color: #333333;
+            font-size: 14px;
+            font-weight: bolder;
+        }
+        /* 第一个列表项的样式 */
+         .menulist li:first-child a{
+            color: #cc9756;
+            border-bottom: 3px solid #cc9756;
+        }
+        /* 其余列表项hover时样式 */
+        .menulist li:hover a{
+            color: #cc9756;
+            border-bottom: 3px solid #cc9756;
+        }
+
+        /* 居家生活列表项的样式 */
+        .menulist .homelife{
+            position: relative; 
+        }
+        /* 下拉展示——商品分类展示列表的样式 */
+        .homelife .showlist{
+            width: 530px;
+            height: 530px;
+            background-color: #ffffff;
+            position: absolute;
+            left: -72px;
+            display: none;
+            bottom: -534px;
+        }
+        /* 鼠标移入时显示下拉列表 */
+         .menulist .homelife:hover .showlist{
+            display: block; 
+        }
+        /* 下拉列表的子选项样式 */
+        /* 床品家纺的样式 */
+         .showlist .cpjf{
+            width: 272px;
+            margin-left: 20px;
+            margin-top: 20px;
+            text-align: left;
+            color: #000000;
+            font-size: 20px;
+            font-weight: bolder;
+            cursor: pointer;
+            display: inline-block;
+        }
+        /* 床垫被褥的样式 */
+        .showlist .cdbr{
+            width: 124px;
+            margin-top: 20px;
+            margin-left: 40px;
+            text-align:left;
+            color: #000000;
+            font-size: 20px;
+            font-weight: bolder;
+            cursor: pointer;
+            display: inline-block;
+        }
+        /* 床品家纺下的选择框整体样式 */
+        .showlist .c1{
+            width: 272px;
+            margin: 0 auto;
+            cursor: pointer;
+            float: left;
+            display: flex;
+            flex-wrap: wrap;    
+        }
+        /* 床垫被褥下的选择框整体样式 */
+        .showlist .c2{
+            width: 124px;
+            margin: 0 auto;
+            cursor: pointer;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        /* 床品家纺下选择框中左边每一个子选项的样式 */
+        .c11>div{
+            width: 90px;
+            height: 30px;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+        }
+        /* 床品家纺下选择框中右边每一个子选项的样式 */
+        .c12>div{
+            width: 90px;
+            height: 30px;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+        }
+        /* 床垫被褥下选择框中每一个子选项样式 */
+        .c2>div{
+            width: 100%;
+            height: 30px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+        /* 床品家纺中子选项图片样式 */
+        .showlist .c1 img{
+            width: 40px;
+            height: 40px;
+        }
+        /* 床品家纺中子选项文字样式 */
+         .showlist .text{
+            font-size: 12px;
+        }
+        /* 床垫被褥中子选项图片样式 */
+        .c2 img{
+            width: 50px;
+            height: 50px;
+        }
+        /* 每一个子选项分割线样式 */
+        .showlist>div:nth-child(1){
+            padding: 10px 0;
+            border-bottom: 1px solid #999999;
+        }
+        .showlist>div:nth-child(2){
+            padding: 10px 0;
+            border-bottom: 1px solid #999999;
+        }
+
+
+        /* 内容展示区域样式 */
+         .content{
+            width: 100%;
+        }
+        /* 网站展示图片样式 */
+         .content .showimg{
+            width: 1920px;
+            height: 420px;
+            margin: 0 auto;
+        }
+
+
+        /* 商品展示区域整体样式 */
+         .content .product{
+            width: 1090px;
+            height: 510px;
+            margin: 0 auto;
+        }
+        /* 商品展示区域标题样式 */
+         .product .protitle{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 10px;
+            box-sizing: border-box;
+        }
+        /* 第一个标题 */
+        .protitle .t1{
+            width: 11%;
+            font-size: 26px;
+            font-weight: bold;
+        }
+        /* 第二个标题 */
+        .protitle .t2{
+            width: 15%;
+            font-size: 14px;
+            font-weight: lighter;
+        }
+        /* 第三个标题 */
+        .protitle .t3{
+            width: 74%;
+            font-size: 14px;
+            font-weight: lighter;
+            text-align: right;
+        }
+
+
+        /* 商品展示区域样式 */
+         .product .proshow{
+            width: 100%;
+            height: 365px;
+            display: flex;
+            justify-content: space-between;
+        }
+        /* 商品卡片整体样式 */
+        .proshow>div{
+            width: 265px; 
+            height: 365px;        
+        }
+        /* 商品卡片背景图片样式 */
+         .proshow>div .proimg{
+            width: 265px;
+            height: 265px;
+        }
+        /* 第一个卡片的背景图片 */
+         .proshow>div:nth-child(1) .proimg{
+            background-image: url('./12.png');
+            background-size: 265px 265px;
+        }
+        /* 第二个卡片的背景图片 */
+         .proshow>div:nth-child(2) .proimg{
+            background-image: url('./12.png');
+            background-size: 265px 265px;       
+        }   
+        /* 第三个卡片的背景图片 */
+         .proshow>div:nth-child(3) .proimg{
+            background-image: url('./12.png');
+            background-size: 265px 265px;       
+        }   
+        /* 第四个卡片的背景图片 */
+         .proshow>div:nth-child(4) .proimg{
+            background-image: url('./12.png');
+            background-size: 265px 265px;
+        }
+        /* 图片 hover 改变背景图片 */
+        .proshow>div .proimg:hover{
+            background-image: url('https://yanxuan-item.nosdn.127.net/da59d01f74679ddef05480b4cdeff6ac.jpg?type=webp&quality=95&thumbnail=265x265&imageView');
+            background-size: 265px 265px;
+        }
+        /*商品描述文字样式 */
+         .proshow>div .prodesc{
+            width: 70%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        /* 商品价格样式 */
+         .proshow>div .proprice{
+            width: 40%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 15px;
+            font-weight: lighter;
+            color: red;
+        }
+        /* 商品价格原价样式 */
+         .proshow>div .proprice .zkprice{
+            color: rgb(119, 119, 119);
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <!-- 主容器 -->
+     <div class="container">
+        <!-- 头部区域 -->
+         <div class="header">
+
+            <!-- 顶部导航栏区域 -->
+              <div class="topnav">
+                <!-- 导航栏 -->
+                  <div class="nav">
+                    <div>登录/注册</div>
+                    <div>我的订单</div>
+                    <div>甄选家</div>
+                    <div>企业采购 <i class="iconfont icon-xiangxiajiantou"></i>
+                        <!-- 下拉列表 -->
+                        <div class="selectMenu">
+                            <i class="iconfont icon-xiangxiasanjiao"></i>
+                            <!-- 下拉列表 -->
+                            <div>严选智采</div>
+                            <div>企业购</div>
+                            <div>联系我们</div>
+                        </div>
+                    </div>
+                    <div>客户服务 <i class="iconfont icon-xiangxiajiantou"></i>
+                        <!-- 下拉列表 -->
+                        <div class="selectMenu1">
+                            <i class="iconfont icon-xiangxiasanjiao"></i>
+                            <!-- 下拉列表 -->
+                            <div>在线客服</div>
+                            <div>帮助中心</div>
+                            <div>商务合作</div>
+                            <div>开放平台</div>
+                        </div>
+                    </div>
+                    <div>
+                        <i class="iconfont icon-shouji-copy"></i> APP
+                        <div class="selectMenu2">
+                            <i class="iconfont icon-xiangxiasanjiao"></i>
+                            <!-- 下拉列表 -->
+                            <div class="img1"><img src="bg.jpg" alt="" width="110px" height="100px"></div>
+                            <div class="text">扫码添加创始人</div>    
+                        </div>
+                    </div>
+                    </div>
+              </div>
+
+            <!-- 搜索区域 -->
+              <div class="search">
+                <!-- logo区域 -->
+                  <div class="logo">
+                    <img src="./123.jpg" alt="">
+                  </div>
+                <!-- 搜索框 -->
+                    <div class="sInput">
+                        <div class="input">
+                             <input type="text" placeholder="请输入文字">
+                             <div>搜索</div>
+                        </div>
+                         <!-- 搜索框导航栏 -->
+                        <div class="snav">
+                            <div>肉食动物</div>
+                            <div>拖把</div>
+                            <div>睡衣</div>
+                            <div>湿巾</div>
+                            <div>锅</div>
+                            <div>行李箱</div>
+                            <div>牛奶</div>
+                            <div>纸巾</div>
+                            <div>枕头</div>
+                        </div>
+                    </div>    
+                <!-- 购物车 -->
+                  <div class="cart">
+                    <!-- 购物车图标整体 -->
+                    <div class="icon">
+                        <!-- 购物车图标 -->
+                        <i class="iconfont icon-gouwuche"></i> 
+                        <!-- 购物车标题 -->
+                        <div class="title">购物车</div>
+                        <!-- 购物车数量 -->
+                        <div class="count">0</div>
+                    </div>
+                  </div>
+              </div>
+
+            <!-- 横向导航栏菜单 -->
+              <div class="menu">
+                <!-- 菜单列表 -->
+                    <ul class="menulist">
+                        <li><a href="#">首页</a></li>
+                        <li class="homelife">
+                            <a href="#">居家生活</a>
+                            <!-- 下拉列表 -->
+                            <div class="showlist">
+                                <div class="cpjf">床品家纺</div>
+                                <div class="cdbr">床垫被褥</div>
+                                <div class="c1">
+                                    <div class="c11">
+                                    <div><img src="https://yanxuan.nosdn.127.net/6eeaa813566307004ff88f1013bf08fe.png?quality=95&type=webp&imageView"><div class="text">四件套</div></div>
+                                    <div><img src="https://yanxuan.nosdn.127.net/3d59676c9257ed1e7d2b9a3514e2a97c.png?quality=95&type=webp&imageView"><div class="text">四季款</div></div>
+                                    <div><img src="https://yanxuan.nosdn.127.net/bf37171f595d7111ab2dff6c72f2179b.png?quality=95&type=webp&imageView"><div class="text">凉席蚊帐</div></div>
+                                    <div><img src="https://yanxuan.nosdn.127.net/70c2bdece979992ea57021bc670acec7.png?quality=95&type=webp&imageView"><div class="text">乳胶枕</div></div>
+                                    <div><img src="https://yanxuan.nosdn.127.net/83b1f3363ef9a9684651136b49bc510f.png?quality=95&type=webp&imageView"><div class="text">枕头</div></div>
+                                    <div><img src="https://yanxuan.nosdn.127.net/8fc4fc9dbd284ceeacae9465abce0425.png?quality=95&type=webp&imageView"><div class="text">盖毯</div></div>
+                                    <div><img src="https://yanxuan.nosdn.127.net/6d0d87c7cf8b70a4974cd188841ca368.png?quality=95&type=webp&imageView"><div class="text">床笠枕套</div></div>
+                                    <div><img src="https://yanxuan.nosdn.127.net/7812caf77540ead7a3d46fbea4f7ab29.png?quality=95&type=webp&imageView"><div class="text">被子</div></div>
+                                    <div><img src="https://yanxuan.nosdn.127.net/5d74c1e70d49be6deee34d0cf9f6b85d.png?quality=95&type=webp&imageView"><div class="text">毯子</div></div>
+                                    </div>
+                                    <div class="c12">
+                                    <div><img src="https://yanxuan.nosdn.127.net/be72de9243cb293ff977f26aa6a7cdc4.png?quality=95&type=webp&imageView"><div class="text">秋冬款</div></div>
+                                    <div><img src="https://yanxuan.nosdn.127.net/9e3600d58d4b1fa4355f9ec968d69459.png?quality=95&type=webp&imageView"><div class="text">儿童床品</div></div>
+                                </div></div>
+                                <div class="c2">
+                                     <div><img src="https://yanxuan.nosdn.127.net/750dcd83b1e674dad595d9955f62516d.jpg?quality=95&type=webp&imageView"><div class="text">床垫</div></div> 
+                                     <div><img src="https://yanxuan.nosdn.127.net/68fc05e5be5d4de36291ecaf830436a6.png?quality=95&type=webp&imageView"><div class="text">床褥</div></div>      
+                                     <div><img src="https://yanxuan.nosdn.127.net/ddcc191110ea91d747f621b63fa30cc8.png?quality=95&type=webp&imageView"><div class="text">乳胶床套</div></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#">宠物生活</a></li>
+                        <li><a href="#">服饰鞋包</a></li>
+                        <li><a href="#">美食酒水</a></li>
+                        <li><a href="#">个护清洁</a></li>
+                        <li><a href="#">母婴亲子</a></li>
+                        <li><a href="#">运动旅行</a></li>
+                        <li><a href="#">数码家电</a></li>
+                        <li><a href="#">严选全球</a></li>
+                        <li><a href="#">为你严选</a></li>
+                        <li><a href="#">众筹</a></li>
+                    </ul>
+              </div>
+         </div>
+
+
+        <!-- 内容区域 -->
+         <div class="content">
+            <!-- 网站展示图片 -->
+              <div class="showimg">
+                <img src="https://yanxuan.nosdn.127.net/static-union/16653843234a47a0.png?type=webp&imageView&quality=95&thumbnail=1920x420" alt="">
+            </div>
+            
+            <!-- 新品首发——网站展示商品 -->
+             <div class="product">
+                <!-- 标题区域 -->
+                <div class="protitle">
+                    <div class="t1">新品首发</div>
+                    <div class="t2">为你寻觅世间好物</div>
+                    <div class="t3">更多新品></div>
+                </div>
+                <!-- 商品展示区域 -->
+                <div class="proshow">
+                    <div class="p1">
+                        <!-- 商品图片 -->
+                         <div class="proimg"></div>
+                        <!-- 商品描述 -->
+                          <div class="prodesc">来自沙漠的甜蜜献礼 民勤金红宝蜜瓜</div>
+                        <!-- 商品价格 -->
+                          <div class="proprice">￥10.9 <span class="zkprice">￥17</span></div>
+                    </div>
+                    <div class="p2">
+                       <!-- 商品图片 -->
+                         <div class="proimg"></div>
+                       <!-- 商品描述 -->
+                         <div class="prodesc">来自沙漠的甜蜜献礼 民勤金红宝蜜瓜</div>
+                       <!-- 商品价格 -->
+                         <div class="proprice">￥10.9 <span class="zkprice">￥17</span>
+                         </div>
+                    </div>
+                    <div class="p3">
+                       <!-- 商品图片 -->
+                         <div class="proimg"></div>
+                       <!-- 商品描述 -->
+                         <div class="prodesc">来自沙漠的甜蜜献礼 民勤金红宝蜜瓜</div>
+                       <!-- 商品价格 -->
+                         <div class="proprice">￥10.9 <span class="zkprice">￥17</span>
+                         </div>
+                    </div>
+                    <div class="p4">
+                       <!-- 商品图片 -->
+                         <div class="proimg"></div>
+                       <!-- 商品描述 -->
+                         <div class="prodesc">来自沙漠的甜蜜献礼 民勤金红宝蜜瓜</div>
+                       <!-- 商品价格 -->
+                         <div class="proprice">￥10.9 <span class="zkprice">￥17</span>
+                         </div>
+                    </div>
+                </div>
+             </div>
+         </div>
+
+
+        <!-- 底部区域 -->
+         <div class="footer"></div>
+     </div>
+</body>
+</html>
