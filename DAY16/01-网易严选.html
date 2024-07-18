@@ -458,6 +458,27 @@
          .content{
             width: 100%;
         }
+        /* 左右两侧粘性布局 */
+        .content .left{
+            width: 100px;
+            height: 400px;
+            background-color: red;
+            float: left;
+            /* margin-left: 2vw; */
+            /* 粘滞定位 */
+            position: sticky;
+            top: 60px;
+        }
+         .content .right{
+            width: 100px;
+            height: 400px;
+            background-color: red;
+            float: right;
+            /* margin-right: 2vw; */
+            /* 粘滞定位 */
+            position: sticky;
+            top: 60px;
+        }
         /* 网站展示图片样式 */
          .content .showimg{
             width: 1920px;
@@ -469,7 +490,7 @@
         /* 商品展示区域整体样式 */
          .content .product{
             width: 1090px;
-            height: 510px;
+            height: 430px;
             margin: 0 auto;
         }
         /* 商品展示区域标题样式 */
@@ -501,9 +522,8 @@
             text-align: right;
         }
 
-
         /* 商品展示区域样式 */
-         .product .proshow{
+        .product .proshow{
             width: 100%;
             height: 365px;
             display: flex;
@@ -564,6 +584,192 @@
         }
         /* 商品价格原价样式 */
          .proshow>div .proprice .zkprice{
+            color: rgb(119, 119, 119);
+            text-decoration: line-through;
+        }
+        
+
+
+        /* 商品展示区域整体背景样式 */
+        .content .product2{
+            width: 100vw;
+            height: 660px;
+            margin: 0;
+            background-color: rgb(244, 240, 234)
+        }
+        /* 商品展示区域2的整体样式 */
+         .content .pdc{
+            width: 1090px;
+            height: 660px;
+            margin: 0 auto;
+            background-color: rgb(244, 240, 234);
+        }
+        /* 商品展示区域2标题样式 */
+         .pdc .pdct{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 20px;    
+        }
+        /* 第一个标题 */
+        .pdct .pt1{
+            width: 11%;
+            font-size: 26px;
+            font-weight: bold;
+            
+        }
+        /* 第二个标题 */
+        .pdct .pt2{
+            width: 8%;
+            color: #cc9756;
+            text-align: center;
+            font-size: 14px;
+            font-weight: lighter;
+            padding-bottom: 5px;
+            margin-left: 20px;
+            margin-bottom: -2px;
+            border-bottom: #cc9756 3px solid;
+        }
+        /* 第三个标题 */
+        .pdct .pt3{
+            width: 11%;
+            font-size: 14px;
+            font-weight: lighter;
+            margin-bottom: 6px;
+            margin-left: 30px;
+        }
+        /* 第四个标题 */
+        .pdct .pt4{
+            width: 67%;
+            font-size: 14px;
+            font-weight: lighter;
+            text-align: right;
+        }
+        /* 标题二/三鼠标悬停时标题样式 */
+        .pt3:hover{
+            color: #cc9756;
+            cursor: pointer;
+        }
+        .pt2:hover{
+            color: #cc9756;
+            cursor: pointer;
+        }
+        
+        /* 商品展示区域2图片样式 */
+         .pdc .pdcs{
+            width: 100%;
+            height: 570px;
+            display: flex;  
+        }
+        /* 产品图片区域样式 */
+         .pdcs .pd1{
+            width: 390px;
+            height: 500px; 
+            background-color: white;
+        }
+        /* 图片样式 */
+        .pd1 .pimg{
+            width: 390px;
+            height: 320px;
+            border-bottom: rgb(244, 240, 234) 1px solid;
+            display: flex;
+            justify-content: center;    
+            align-items: center;
+        }
+         .pd1 .pimg img{
+            width: 300px; 
+            transition: transform 1s;
+        }
+        /* 鼠标悬停时图片样式 */
+        .pd1:hover .pimg img{
+            transform: scale(1.05)
+        }
+        /* 描述样式 */
+        .pdesc{
+            width: 245px;
+            height: 49px;
+            margin: 30px auto;
+            text-align: center;
+            font-weight: bold;
+        }
+        /* 鼠标悬停时标题样式 */
+        .pdesc:hover{
+            color: #cc9756;
+            cursor: pointer;
+        }
+        /* 价格样式 */
+         .pd1 .pprice{
+            width: 40%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 15px;
+            font-weight: lighter;
+            color: red;
+        }
+        /* 商品价格原价样式 */
+        .pd1 .pprice .zkprice{
+            color: rgb(119, 119, 119);
+            text-decoration: line-through;
+        }
+
+        .pdcs .pd27{
+            width: 660px;
+            height: 500px;
+            display: flex;
+            flex-wrap: wrap;    
+            justify-content: space-evenly;
+        }
+        .pd27>div{
+            width: 180px;
+            height: 240px;
+            background-color: white;
+        }
+        .pd27 .pd5,.pd6,.pd7{
+            border-top: 20px rgb(244, 240, 234) solid;
+        }
+        /* 图片样式 */
+        .pd27>div .pImg{
+            width: 180px;
+            height: 180px;
+            border-bottom: rgb(244, 240, 234) 1px solid;
+            display: flex;
+            justify-content: center;    
+            align-items: center;
+        }
+         .pd27>div .pImg img{
+            width: 180px;
+            transition: transform 1s;
+        }
+        /* 鼠标悬停时图片样式 */
+        .pd27>div .pImg img:hover{
+            transform: scale(1.05)
+        }
+        /* 描述样式 */
+        .pDesc{
+            width: 180px;
+            height: 25px;
+            margin: 5px auto;
+            font-size: 10px;;
+            text-align: center;
+            font-weight: bold;
+        }
+        /* 鼠标悬停时标题样式 */
+        .pDesc:hover{
+            color: #cc9756;
+            cursor: pointer;
+        }
+        /* 价格样式 */
+         .pd27>div .pPrice{
+            width: 40%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 10px;
+            font-weight: lighter;
+            color: red;
+        }
+        /* 商品价格原价样式 */
+        .pd27>div .pPrice .zkprice{
             color: rgb(119, 119, 119);
             text-decoration: line-through;
         }
@@ -705,11 +911,19 @@
 
         <!-- 内容区域 -->
          <div class="content">
+            
             <!-- 网站展示图片 -->
               <div class="showimg">
                 <img src="https://yanxuan.nosdn.127.net/static-union/16653843234a47a0.png?type=webp&imageView&quality=95&thumbnail=1920x420" alt="">
             </div>
             
+
+             <!-- 左边侧边栏 -->
+             <aside class="left"></aside>
+             <!-- 右边侧边栏 -->
+             <aside class="right"></aside>
+
+
             <!-- 新品首发——网站展示商品 -->
              <div class="product">
                 <!-- 标题区域 -->
@@ -757,6 +971,80 @@
                     </div>
                 </div>
              </div>
+
+            
+             <!-- 人气推荐——网站展示商品 -->
+                <div class="product2">
+               <div class="pdc">
+                    <!-- 标题区域 -->
+                    <div class="pdct">
+                        <div class="pt1">人气推荐</div>
+                        <div class="pt2">编辑推荐</div>
+                        <div class="pt3">热销总榜</div>
+                        <div class="pt4">更多推荐></div>
+                    </div>
+                    <!-- 商品展示区域 -->
+                    <div class="pdcs">
+                        <div class="pd1">
+                            <!-- 商品图片 -->
+                            <div class="pimg">
+                                <img src="https://yanxuan-item.nosdn.127.net/df6469193883498c4c1014d113a927f9.png?type=webp&quality=95&thumbnail=320x320&imageView">
+                            </div>
+                            <!-- 商品描述 -->
+                            <div class="pdesc">纽仕兰新西兰4.0g蛋白全/低脂纯牛奶 24盒</div>
+                             <!-- 商品价格 -->
+                            <div class="pprice">￥10.9 <span class="zkprice">￥17</span></div>
+                        </div>  
+                        <div class="pd27">
+                        <div class="pd2">
+                            <!-- 商品图片 -->
+                            <div class="pImg"><img src="https://yanxuan-item.nosdn.127.net/19e168f7b1ea1fdf525c10659839a547.png?type=webp&quality=95&thumbnail=180y180&imageView"></div>
+                            <!-- 商品描述 -->
+                            <div class="pDesc">来自沙漠的甜蜜献礼 民勤金红宝蜜瓜</div>
+                            <!-- 商品价格 -->
+                            <div class="pPrice">￥10.9 <span class="zkprice">￥17</span></div>
+                        </div> 
+                        <div class="pd3">
+                            <!-- 商品图片 -->
+                            <div class="pImg"><img src="https://yanxuan-item.nosdn.127.net/1231a1fd0e69749bf25a36f9acdc65b2.png?type=webp&quality=95&thumbnail=180y180&imageView"></div>
+                            <!-- 商品描述 -->
+                            <div class="pDesc">来自沙漠的甜蜜献礼 民勤金红宝蜜瓜</div>
+                            <!-- 商品价格 -->
+                            <div class="pPrice">￥10.9 <span class="zkprice">￥17</span></div></div> 
+                        <div class="pd4">
+                            <!-- 商品图片 -->
+                            <div class="pImg"><img src="https://yanxuan-item.nosdn.127.net/339698d8e6acc230cbdaafb5271d40ad.png?type=webp&quality=95&thumbnail=180y180&imageView"></div>
+                            <!-- 商品描述 -->
+                            <div class="pDesc">来自沙漠的甜蜜献礼 民勤金红宝蜜瓜</div>
+                            <!-- 商品价格 -->
+                            <div class="pPrice">￥10.9 <span class="zkprice">￥17</span></div>
+                        </div>     
+                        <div class="pd5">
+                            <!-- 商品图片 -->
+                            <div class="pImg"><img src="https://yanxuan-item.nosdn.127.net/1b766570fb885d34e412f4eb5e0e3697.png?type=webp&quality=95&thumbnail=180y180&imageView"></div>
+                            <!-- 商品描述 -->
+                            <div class="pDesc">来自沙漠的甜蜜献礼 民勤金红宝蜜瓜</div>
+                            <!-- 商品价格 -->
+                            <div class="pPrice">￥10.9 <span class="zkprice">￥17</span></div>
+                        </div>     
+                        <div class="pd6">
+                            <!-- 商品图片 -->
+                            <div class="pImg"><img src="https://yanxuan-item.nosdn.127.net/2c0147161faaa160cf10b6770f1e290d.png?type=webp&quality=95&thumbnail=180y180&imageView"></div>
+                            <!-- 商品描述 -->
+                            <div class="pDesc">来自沙漠的甜蜜献礼 民勤金红宝蜜瓜</div>
+                            <!-- 商品价格 -->
+                            <div class="pPrice">￥10.9 <span class="zkprice">￥17</span></div>
+                        </div>     
+                        <div class="pd7">
+                            <!-- 商品图片 -->
+                            <div class="pImg"><img src="https://yanxuan-item.nosdn.127.net/ff10d4706b3f118bd24b1bbb16315180.png?type=webp&quality=95&thumbnail=180y180&imageView"></div>
+                            <!-- 商品描述 -->
+                            <div class="pDesc">来自沙漠的甜蜜献礼 民勤金红宝蜜瓜</div>
+                            <!-- 商品价格 -->
+                            <div class="pPrice">￥10.9 <span class="zkprice">￥17</span></div>
+                        </div>  </div>   
+                    </div>
+               </div></div>
          </div>
 
 
