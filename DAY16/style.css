@@ -1,4 +1,5 @@
-
+@import url(./fave-star.css);       
+@import url(./high-vague.css);
         /* 清除默认样式 */
         *{
             margin: 0;  
@@ -835,8 +836,9 @@
         }
         .bedroom .bedShow{
             width: 1090px;
-            height: 840px;
+            height: 800px;
             margin: 0;
+            background-color: rgb(244, 240, 234);
         }
         .bedShow .bs1{
             margin-top: 10px;
@@ -844,7 +846,7 @@
         }
         .bedShow .bs2{
             width: 100%;
-            height: 500px;
+            height: 400px;
             display: flex;
             justify-content: space-between;
         }
@@ -899,24 +901,35 @@
 
         .footer{
             width: 100%;
-            height: 1000px;
+            height: 200px;
             background-color: #f5f5f5;
             display: flex;
             justify-content: center;
         }
         .footer .three{
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             width: 1090px;
-            height: 300px;
-            margin: 0 auto;
-            /* background-color: #ff0000; */
+            height: 150px;
+            margin: 30px auto;
         }
         .three>div{
             width: 300px;
-            height: 300px;
-            /* background-color: #15ff00; */
-            text-align: center;
+            height: 150px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
+        .three .ft2,.ft3{
+            border-left: #acacac solid 1px;
+        }
+        .three>div .text1{
+            width: 300px;
+            height: 30px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: lighter;
+        }
+ 
        
         
