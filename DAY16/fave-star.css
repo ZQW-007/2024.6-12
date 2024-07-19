@@ -1,6 +1,4 @@
-.rating > label {
-    margin-right: 4px;
-  }
+
   
   .rating:not(:checked) > input {
     display: none;
