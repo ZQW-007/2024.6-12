@@ -1,32 +1,51 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
     <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<style>
+  html,body,#app,.common-layout{
+    margin: 0;
+    padding: 0;
+    height:100%;
   }
-}
+  .xiaoshi {
+    display: none;
+  }
+  body::-webkit-scrollbar {
+      width: 0px;
+      height: 0px;
+  }
+  /* //滚动条的宽度 */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #e4e4e4;
+    border-radius: 6px;
+  }
+  /* //滚动条的滑块 */
+  ::-webkit-scrollbar-thumb {
+    background-color: #a1a3a9;
+    border-radius: 6px;
+  }
+  .el-pagination {
+    padding-bottom:10px!important;
+    padding-top:10px!important;
+    display:flex;
+    justify-content: flex-end
+  }
+    /* // 对话框圆角 */
+  .el-dialog__wrapper .el-dialog {
+      border-radius: 8px;
+  }
+  .el-dialog__title {
+    font-size: 14px !important;
+    font-family: "黑体";
+  }
+   /* 对话框样式 */
+  .el-dialog__header {
+    border-bottom: 1px solid #e3e8ee;
+  }
+ 
 </style>
