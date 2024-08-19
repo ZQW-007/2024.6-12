@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5,6,7,8,9,10];
+        console.log('every',arr.every(function(item,index,arr){
+            return item > 0;
+        }));//判断数组中的每一项是否都大于0，返回布尔值
+        console.log('some',arr.some(function(item,index,arr){
+            return item > 8;
+        }));//判断数组中是否有一项是否都大于0，有则返回ture
+        console.log('filter',arr.filter(function(item){
+            return item > 5;
+        }))//返回一个新数组，数组中的每一项都大于5
+        console.log('map',arr.map(function(item){
+            return item * 2;
+        }))//返回一个新数组，数组中的每一项都乘以2
+
+
+        var person = [
+            {name:'张三',age:18,gender:'男'},
+            {name:'李四',age:19,gender:'男'},
+            {name:'王五',age:20,gender:'男'},
+            {name:'赵六',age:21,gender:'男'},
+        ]
+        res = person.map(function(item){
+            return {
+                name:item.name,
+                age:item.age,
+                sex:item.gender,
+            }})
+        console.log(res);
+
+        
+        arr.forEach(function(item){
+            console.log(item);
+        })//forEach没有返回值，只是对数组中的每一项进行操作
+    </script>
+</body>
+</html>

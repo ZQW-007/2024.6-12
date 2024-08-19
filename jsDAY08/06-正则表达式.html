@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 正则表达式
+        // 1.创建正则表达式
+        // 1.1字面量创建
+        var reg1 = /abc/;
+        var reg1 = /abc/g; // g表示全局匹配
+        // 1.2构造函数创建
+        //var reg1 = new RegExp("abc");
+        // 2.正则表达式的方法
+        // 2.1test()方法
+        console.log(reg1.test("abc")); // true
+        console.log(reg1.test("abcd")); // true
+        console.log(reg1.test("6")); // false
+        console.log(reg1.test("ab")); // false
+        // 2.2exec()方法
+        console.log(reg1.exec("abc")); // ["abc", index: 0, input: "abc", groups: undefined]
+        console.log(reg1.exec("abcd")); 
+        console.log(reg1.exec("6")); // null
+        console.log(reg1.exec("ab")); // null
+
+        // 3.把正则表达式的内容转化成字⾯量形式字符串/有本地特⾊的字符串
+        console.log(reg1.toString());
+        console.log(reg1.toLocaleString());
+
+        //4.lastIndex
+        var arr = 'abcabcabc';
+        console.log(reg1.lastIndex);//0
+        console.log(reg1.exec(arr));//["abc", index: 0, input: "abcabcabc", groups: undefined]
+        console.log(reg1.lastIndex);//3
+        console.log(reg1.exec(arr));//["abc", index: 3, input: "abcabcabc", groups: undefined]
+        console.log(reg1.lastIndex);//6
+        console.log(reg1.exec(arr));//["abc", index: 6, input: "abcabcabc", groups: undefined]
+        console.log(reg1.lastIndex);//9
+        console.log(reg1.exec(arr));//null
+        console.log(reg1.lastIndex);//0,重新开始遍历查询
+        console.log(reg1.exec(arr));//["abc", index: 0, input: "abcabcabc", groups: undefined]
+    
+        // 5.
+        var str = 'abc qwe abd'
+        var reg2 = /[abc]/;// 只要包含有a 或者 包含有b 或者包含有c 都返回为true
+        console.log(reg2.test(str)); //true
+        console.log(reg2.exec(str)); //["a", index: 0, input: "abc qwe abd", groups: undefined]
+        
+        // 6.
+        var str = 'abc'
+        console.log(str);
+        var reg1 = /[^abc ]/igm;// ^ 表示取反
+        console.log(reg1.test(str)); //false
+
+        // 7.
+        var rg = /abc/;
+        // /abc/ 只要包含有abc这个字符串返回的都是true
+        console.log(rg.test('abc')); //true
+        console.log(rg.test('abcd')); //true
+        console.log(rg.test('aabcd'));//true
+        console.log('---------------------------');
+        // 必须是以abc开头的字符串才会满⾜
+        var reg = /^abc/;
+        console.log(reg.test('abc')); // true
+        console.log(reg.test('abcd')); // true
+        console.log(reg.test('aabcd')); // false
+        console.log('---------------------------');
+        // 必须是以abc结尾的字符串才会满⾜
+        var reg = /abc$/;
+        console.log(reg.test('abc')); // true
+        console.log(reg.test('qweabc')); // true
+        console.log(reg.test('aabcd')); // false
+        console.log('---------------------------');
+        var reg1 = /^abc$/; // 精确匹配 要求必须是 abc字符串才符合规范
+        console.log(reg1.test('abc')); // true
+        console.log(reg1.test('abcd')); // false
+        console.log(reg1.test('aabcd')); // false
+        console.log(reg1.test('abcabc')); // false
+        console.log('---------------------------');
+
+        // 8.字符集合与"^"和"$"⼀起使⽤
+        // n选⼀ 只有是其中任意一个对象 才返回 true
+        var rg1 = /^[abcd]$/;
+        console.log(rg1.test('aa'));//false
+        console.log(rg1.test('a'));//true
+        console.log(rg1.test('b'));//true
+        console.log(rg1.test('c'));//true
+        console.log(rg1.test('d'));//false
+    </script>
+</body>
+</html>

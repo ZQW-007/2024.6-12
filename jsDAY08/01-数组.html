@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        window.onload = function(){}
+           
+    </script> -->
+</head>
+<body>
+    <div></div>
+    <script>
+        //toString方法
+        var arr = [1,2,3,4,5]
+        console.log(arr.toString())
+        //join方法
+        console.log(arr.join('-'))
+        //json字符串
+        //序列化 json.stringify()
+        var str = JSON.stringify(arr)
+        console.log('json字符串',str)
+        //发序列化 json.parse()反序列化为对象
+        var prase = JSON.parse(str)
+        console.log(prase)
+        
+        //构造函数的方法
+        //Array.isArray()
+        console.log(Array.isArray(arr))
+        //Array.from()
+        //将类数组对象或者可遍历对象转换为数组
+        var myArr = Array.from("BRIUP");
+        console.log(myArr);
+        
+    </script>
+</body>
+</html>

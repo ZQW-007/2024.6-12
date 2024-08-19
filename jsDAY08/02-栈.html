@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5,6,7,8,9,10]
+        // arr.push(11)末尾增加元素
+        arr.push(11)
+        console.log(arr)
+        // arr.pop()末尾删除元素
+        let delItem = arr.pop()
+        console.log('删除元素',delItem)
+        console.log(arr)
+        // arr.unshift(0)开头增加元素
+        arr.unshift(0)
+        console.log(arr)
+        // arr.shift()开头删除元素
+        let delItem1 =arr.shift()
+        console.log('删除元素',delItem1)
+        console.log(arr)
+        
+
+        //栈：先进后出
+        var arr2 = [1,2]
+        arr2.push(3,4,5)
+        console.log(arr2)
+        console.log(arr2.shift())
+        console.log(arr2.shift())
+        console.log(arr2.shift())
+        
+        // reserve()反转数组
+        var arr3 = [1,4,9]
+        console.log(arr3.reverse())
+        console.log(arr3)
+
+        //sort()排序
+        var arr4 = [1,4,9,2,3,5,6,7,8]
+        //默认升序
+        console.log(arr4.sort())
+        //降序
+        console.log(arr4.sort((a,b)=>b-a))
+        //降序
+        console.log(arr4.sort(function(a,b){
+            return b-a
+        }))
+        //原数组改变
+        console.log(arr4)
+
+
+    </script>
+</body>
+</html>
