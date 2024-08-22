@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="div1"></div>
+  <button id="btn">按钮</button>
+
+  <script>
+    // 1. 事件源 2. 事件类型 3. 事件处理程序
+    // //1.事件源
+    // var btn = document.getElementById('btn')
+    // console.log(btn);
+    // // 2. 事件类型 click 事件
+
+    // // 3. 事件处理程序
+    // btn.onclick = function(){
+    //   alert('按钮被点击了')
+    // }
+
+    var div1 = document.getElementById('div1')
+    var btn = document.getElementById('btn')
+    btn.onclick = clickBtn
+    function clickBtn(){
+      div1.innerHTML = '按钮被点击了'
+      div1.style.width = '200px'
+      div1.style.height = '200px'
+      div1.style.backgroundColor = 'red'
+    }
+    
+  </script>
+</body>
+</html>

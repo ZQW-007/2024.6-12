@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    // 原型链继承： 修改子类的原型为父类的实例，子类实例就可以访问父类的属性和方法
+
+    function Parent(){
+      this.name = ['6']
+      this.friends = ['张三']
+      
+    }
+
+    function Child(){
+      
+    }
+    
+    Child.prototype = new Parent()
+
+    var child1 = new Child()
+    var child2 = new Child()
+
+    child1.name.push('9')
+    child1.friends.push('李四')
+    console.log(child1.friends);
+
+    child2.friends.push('王五')
+
+    console.log(child2.friends);
+    console.log(child1.friends);
+    console.log(child1.name)
+    console.log(child2.name)
+
+    
+  </script>
+</body>
+</html>

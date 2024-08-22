@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #outer {
+        width: 300px;
+        height: 300px;
+        background-color: red;
+      }
+      #center {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+      }
+      #inner {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" method="post">
+      <input id="ipt" type="submit" value="提交">
+    </form>
+    <div id="outer">
+      outer
+      <div id="center">
+        center
+        <div id="inner">inner</div>
+      </div>
+    </div>
+
+    <button onclick="handleClick()">按钮</button>
+
+    <script>
+      var inner = document.getElementById("inner");
+      var center = document.getElementById("center");
+      var outer = document.getElementById("outer");
+
+      var b = document.body;
+
+      inner.onclick = function (event) {
+        // console.log(event);
+        event.stopPropagation(); // 阻止事件冒泡
+        console.log("inner")
+      };
+      center.onclick = function () {
+        console.log("center");
+      };
+      outer.onclick = function () {
+        console.log("outer");
+      };
+      // b.onclick = function () {
+      //   console.log("body");
+      // };
+
+      function handleClick(){
+        console.log("点击了button");
+      }
+
+      var ipt = document.getElementById('ipt');
+      ipt.onclick = function(event){
+        console.log(event);
+        event.preventDefault(); //阻止默认行为
+        console.log('点击了提交按钮') 
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    // es6 继承
+    class Parent {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      sayName(){
+        console.log(this.name);
+      }
+    }
+
+    class Child extends Parent {
+      constructor(name, age, gender) {
+        super(name, age);  // super() 调用父类的构造函数  必须写在this之前
+        this.gender = gender;  
+      }
+      sayGender(){
+        console.log(this.gender);
+      }
+    }
+
+    let child = new Child('小明', 18, '男');
+    child.sayName();
+    child.sayGender();
+
+
+    class Card{
+      constructor(name, price){
+        this.name = name;  // 品牌
+        this.price = price; // 价格
+      }
+      run(){
+
+      }
+    }
+
+    class BYD extends Card {
+      constructor(name, price, color){
+        super(name, price);
+        this.color = color;
+      }
+      run(){
+        console.log('跑起来');
+      }
+    }
+
+    class BMW extends Card {
+      constructor(name, price, color){
+        super(name, price);
+        this.color = color; // 颜色
+      }
+      run(){
+        console.log('跑起来');
+      }
+    }
+
+    var car1 = new BYD('比亚迪', 100000, 'red');
+    car1.run();
+
+   
+  </script>
+</body>
+</html>

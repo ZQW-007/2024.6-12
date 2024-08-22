@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Person(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      var p = new Person("张三", 18);
+      // console.log(p.constructor);
+
+      // console.log(Person.prototype.__proto__);
+      // console.log(Person.prototype.constructor);
+
+      // console.log(p.constructor);
+
+      // console.log(Person.constructor);
+
+      // function createStudent(name, age) {
+      //   var stu = new Object();
+      //   stu.name = name;
+      //   stu.age = age;
+      //   stu.sayHi = function () {
+      //     console.log(this.name + "说Hi");
+      //   };
+      //   return stu;
+      // }
+
+      // var stu1 = createStudent("张三", 18);
+
+      // console.log(stu1.constructor);
+
+      function Student(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      // function sayHi(){
+      //   console.log(this.name + "说Hi");
+      // }
+      // function sleep(){
+      //   console.log(this.name + "睡觉");
+      // }
+      // Student.prototype.toString = function () {
+      //   console.log(this.name + "说Hi");
+      // };
+      // Student.prototype.sleep = function () {
+      //   console.log(this.name + "睡觉");
+      // }
+
+      Student.prototype = {
+        constructor:Student,
+        sayHi: function () {
+          console.log(this.name + "说Hi");
+        },
+        sleep: function () {
+          console.log(this.name + "睡觉");
+        },
+      }
+
+      var stu1 = new Student("张三", 18);
+      var stu2 = new Student("李四", 20);
+      // console.log(stu1.constructor);
+
+      console.log(stu1.sayHi === stu2.sayHi);
+
+      console.log(Object.prototype);
+      Object.prototype.toString = function(){
+        console.log("toString");
+      }
+
+      var obj = new Object();
+      obj.toString();
+      
+    </script>
+  </body>
+</html>
