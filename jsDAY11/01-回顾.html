@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #outer {
+        width: 300px;
+        height: 300px;
+        background-color: red;
+      }
+      #center {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+      }
+      #inner {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="outer">
+    outer
+    <div id="center">
+      center
+      <div id="inner">inner</div>
+    </div>
+  </div>
+
+  <form action="" method="post">
+    <input id="ipt" type="submit" value="提交">
+  </form> -->
+
+    <!-- 事件委托 -->
+    <ul id="list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+
+    <script>
+      // 1.获取元素
+      // 1.1通过id获取元素
+      // var outer = document.getElementById('outer');
+      // var center = document.getElementById('center');
+      // var inner = document.getElementById('inner');
+
+      // var body = document.body
+
+      // // 绑定点击事件
+      // outer.onclick = function(event){
+      //   event.stopPropagation(); // 阻止事件冒泡
+      //   console.log('点击了outer');
+      // }
+      // center.onclick = function(){
+      //   console.log('点击了center');
+      // }
+      // inner.onclick = function(){
+      //   console.log('点击了inner');
+      // }
+      // body.onclick = function(){
+      //   console.log('点击了body');
+      // }
+
+      // var ipt = document.getElementById('ipt');
+      // ipt.onclick = function(event){
+      //   event.preventDefault(); // 阻止默认行为
+      //   console.log('点击了提交按钮');
+      // }
+
+      var ul = document.getElementById('list')
+      ul.addEventListener('click', function(e) {
+          // console.log(e.target)
+          // e.stopPropagation
+          // e.stopPropagation()
+          console.log(e.target.innerHTML);
+      })
+    </script>
+  </body>
+</html>

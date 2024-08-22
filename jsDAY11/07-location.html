@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="btnClick()">打开百度</button>
+  <button onclick="reloadEle()">刷新页面</button>
+
+  <script>
+    console.log(window.location);
+    console.log(location.href);
+
+    function btnClick(){
+      // location.assign('https://www.baidu.com')
+      location.replace('https://www.baidu.com')
+    }
+
+    function reloadEle(){
+      location.reload()
+    }
+  </script>
+</body>
+</html>
