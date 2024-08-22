@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function Student(name,age){
+      //   this.name = name;
+      //   this.age = age;
+      //   this.sayHi = function(){
+      //     console.log('hi');
+      //   }
+      // }
+
+      // var stu1 = new Student('张三',18);
+      // var stu2 = new Student('李四',19);
+
+      // console.log(stu1.sayHi === stu2.sayHi);
+
+      // function Student(name, age) {
+      //   this.name = name;
+      //   this.age = age;
+      // }
+
+      // function sayHi() {
+      //   console.log(this.name + "说Hi");
+      // }
+      // function sleep(){
+      //   console.log(this.name + "睡觉");
+      // }
+      
+      // var stu1 = new Student("张三", 18);
+      // var stu2 = new Student("李四", 20);
+      // console.log(stu1.sayHi === stu2.sayHi);
+
+      // Student 构造函数
+      function Student(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      // 向原型上添加对象
+      Student.prototype = {
+        constructor:Student,
+        sayHi: function () {
+          console.log(this.name + "说Hi");
+        },
+        sleep: function () {
+          console.log(this.name + "睡觉");
+        },
+      }
+
+      
+      Object.prototype.myName = 'zhangsan'
+      var stu1 = new Student("张三", 18);
+      var stu2 = new Student("李四", 20);
+      stu1.sayHi()
+      console.log(stu1.sayHi === stu2.sayHi);
+      console.log(stu1.constructor);
+
+      console.log(stu1.__proto__);
+
+
+      console.log('name' in stu1);
+
+      console.log('gender' in stu1);
+
+      console.log('111212','myName' in stu1);
+      
+    </script>
+  </body>
+</html>

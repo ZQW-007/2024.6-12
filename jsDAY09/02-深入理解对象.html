@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script>
+    var obj = {
+      name:'张三',
+      age:18,
+      sayHi:function(){
+        console.log(this.name + 'say hi')
+      }
+    }
+
+    var stu1 = {
+      name:'李四',
+      age:18,
+      sayHi:function(){
+        console.log(this.name + 'say hi')
+      }
+    }
+
+    var stu2 = {
+      name:'王五',
+      age:18,
+      sayHi:function(){
+        console.log(this.name + 'say hi')
+      }
+    }
+
+    // 1.工厂模式 --- js封装
+    function createStudent(name,age){
+      var stu = new Object();
+      stu.name = name
+      stu.age = age
+      stu.sayHi = function(){
+        console.log(this.name + 'say hi')
+      }
+      return stu
+    }
+
+    var stu3 = createStudent('赵六',18)
+    var stu4 = createStudent('钱七',18)
+
+    stu3.sayHi()
+
+    // 构造函数
+    function Student(name,age){
+      this.name = name
+      this.age = age
+      this.sayHi = function(){
+        console.log(this.name + 'say hi')
+      }
+    }
+
+    // function Person(){
+      
+    //   this.name ="张三" 
+    // }
+
+  
+
+    
+  </script>
+</body>
+</html>
