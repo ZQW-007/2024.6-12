@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img id="myImg" >
+  
+
+  <script>
+    var img = document.getElementById('myImg')
+    var imgUrl = ''
+    //1. 创建xhr对象 XMLHttpRequest()
+    var xhr = new XMLHttpRequest();
+
+    // console.log(xhr);
+    // 2. 配置信息
+    // xhr.open('get','https://dog.ceo/api/breeds/list/all')
+    xhr.open('get','https://dog.ceo/api/breeds/image/random')
+    // 3. 设置请求头 ，可以不用设置
+    // 4. 发送请求
+    xhr.send()
+    // 5. 监听请求状态
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState === 4 && xhr.status === 200){
+        console.log(xhr);
+        console.log(JSON.parse(xhr.responseText));
+        imgUrl = JSON.parse(xhr.responseText).message
+        
+        img.setAttribute('src',imgUrl)
+      }
+    }
+
+    // fetch('https://dog.ceo/api/breeds/image/random')
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     console.log(res);
+    //     imgUrl = res.message
+    //     img.setAttribute('src',imgUrl)
+    //   })
+
+
+  </script>
+</body>
+</html>

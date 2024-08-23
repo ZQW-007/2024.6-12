@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="img" width="100px" height="100px">
+    <button onclick="getRequest()">每日一句英语名言</button>
+    <script>
+        var img = document.getElementById('img');
+        function getRequest() {
+            //1.创建XMLHttpRequest对象
+            var request = new XMLHttpRequest();
+            //2.使用open方法设置和服务器交互的信息
+            request.open('get', 'https://api.oioweb.cn/api/common/OneDayEnglish')
+            //3.设置requestHeader()可以设置也可以不设置
+            //4.设置发送的数据，开始和服务器交互
+            request.send();
+            //5.取得响应
+            request.onreadystatechange = function () {
+                if (request.readyState === 4 && request.status === 200)
+                    // console.log(request);
+                //json格式数据转换
+                console.log(JSON.parse(request.responseText));
+                imgUrl = JSON.parse(request.responseText).result.img ;
+                img.setAttribute('src',imgUrl)
+            }
+        }
+    </script>
+</body>
+
+</html>

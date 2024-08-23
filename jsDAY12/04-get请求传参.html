@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/qs/6.13.0/qs.min.js"></script>
+</head>
+<body>
+  
+
+  <script>
+    // 参数
+    var params = {
+      name:'zs',
+      age:18
+    }
+    var qs = Qs;
+    var str = qs.stringify(params)
+    console.log(str);
+    // name=zs&age=18
+
+    
+    // xhr.open('get','https://dog.ceo/api/breeds/list/all')
+    //1. 创建xhr对象 XMLHttpRequest()
+    var xhr = new XMLHttpRequest();
+
+    // console.log(xhr);
+    // 2. 配置信息
+    // xhr.open('get','https://dog.ceo/api/breeds/list/all')
+    xhr.open('get','https://dog.ceo/api/breeds/image/random?name=zs&age=18')
+    // 3. 设置请求头 ，可以不用设置
+    // 4. 发送请求
+    xhr.send()
+    // 5. 监听请求状态
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState === 4 && xhr.status === 200){
+        console.log(xhr);
+        console.log(JSON.parse(xhr.responseText));
+      }
+    }
+
+
+  </script>
+</body>
+</html>
