@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./assets/jQuery.js"></script>
+    <script>
+      // $('button').click(function(){
+      //   console.log('按钮被点击了');
+      // })
+      // $(document).ready(function () {
+      //   $("button").on("click", function () {
+      //     console.log("按钮被点击了");
+      //   });
+      // });
+      $(function(){
+        $('button').on('click',function(){
+          console.log('按钮被点击了');
+        })
+
+        var btn = document.querySelector('button');
+        console.log(btn);
+        console.log($(btn).html());  // 相当于 document.innerHTML
+
+        //当 $() 参数为 html片段时
+        $('<div class="div1">我是新来的</div>').appendTo('#box')
+
+      })
+    </script>
+  </head>
+  <body>
+    <button>按钮</button>
+
+    <div id="box"></div>
+    
+  </body>
+</html>

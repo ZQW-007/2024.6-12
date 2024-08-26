@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./assets/jQuery.js"></script>
+</head>
+<body>
+  <div class="box">测试jQuery选中元素</div>
+  <div id="div1">id为div1的盒子</div>
+  
+  <!-- 通过选择器选中符合的元素 -->
+
+  <script>
+    // 通过类选择器选中
+    // console.log($('.box'));
+    var box = $('.box')[0]
+    console.log(box);
+
+    // 通过id选择器
+    var div1 = $('#div1')
+    console.log(div1);
+
+    var doc = $('div')
+    console.log(doc);
+  </script>
+</body>
+</html>

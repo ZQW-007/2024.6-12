@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./assets/jQuery.js"></script>
+</head>
+<body>
+  
+  <div class="nav">
+    <ul>
+      <li>英语</li>
+      <li>语文</li>
+      <li>数学</li>
+    </ul>
+  </div>
+
+  <div class="side">
+    <ul>
+      <li>11</li>
+      <li>22</li>
+    </ul>
+  </div>
+
+  <script>
+    console.log($("div.nav > ul > li"));
+    $('.nav li').click(function(){
+      // this指向当前点击的li
+      $(this).hide()
+    })
+  </script>
+</body>
+</html>

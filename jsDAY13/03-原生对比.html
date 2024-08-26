@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./assets/jQuery.js"></script>
+</head>
+<body>
+  <div class="box">box盒子</div>
+  
+  <script>
+    //和原生进行对比
+    var box = document.querySelector('.box')
+    // var box = document.getElementsByClassName('box')[0]
+    console.log(box);
+    // box.style.color = 'red'
+
+    // 使用jQuery
+    var $box = $('.box')
+    console.log($box);
+    // $box.css('color', 'blue')
+    $box.css({
+      color:'green',
+      fontSize:'20px'
+    })
+
+    // console.log($ === jQuery); //true
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./assets/jQuery.js"></script>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <input type="text" id="input">
+  <button id="btn">添加元素</button>
+  
+  <script>
+    // console.log();
+    $('ul').on('click','li',function(){
+      console.log($(this).text());
+    })
+
+    $('#btn').on('click',function(){
+      // 拿到用户输入的内容
+      var val = $('#input').val()
+      if(val){
+        // 创建一个li元素
+        var $li = $('<li>'+val+'</li>')
+        // 将li元素添加到ul中
+        $('ul').append($li)
+      }else{
+        alert('请输入内容')
+      }
+    })
+
+    // 移除事件处理函数
+    $('#btn').off('click')
+  </script>
+</body>
+</html>
