@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./jquery.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js"></script>
+</head>
+<body>
+    <div id="div1">你好</div>
+    <div id="div2"></div>
+    <input id="ipt" type="text">
+    <button id="btn">按钮</button>
+    <script>
+        $('#div1').append('hello')
+        $('#div1').prepend('<p>hello</p>')
+        $('#div1').after('<p>hello</p>')
+        $('#div1').before('<p>hello</p>')
+        $('#btn').click(function(){
+           var res = $('#ipt').val()
+           $('#div1').append(res)
+            var res1 = $('#div1').clone()
+            $('#div2').append(res1)
+        })
+       
+
+    </script>
+    </script>
+</body>
+</html>

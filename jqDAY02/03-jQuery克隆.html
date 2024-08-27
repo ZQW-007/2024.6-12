@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jQuery.js"></script>
+</head>
+<body>
+  <div id="box">box</div>
+
+  <div id="box1"></div>
+
+  <input id="ipt" type="text">
+  <button id="btn">发送输入内容</button>
+  
+  <script>
+    // true表示shen拷贝（克隆），false表示浅拷贝
+    var clDom = $('#box').clone(true)
+    $('#box1').append(clDom)
+
+    console.log($('#box').text());
+    console.log($('#box1').html());
+    $('#btn').click(function(){
+      console.log($('#ipt').val());
+    })
+  </script>
+</body>
+</html>

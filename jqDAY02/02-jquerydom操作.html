@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jQuery.js"></script>
+</head>
+<body>
+  
+  <div id="box">
+    id为box的div
+    <ul>
+      <li>li1</li>
+      <li>li2</li>
+    </ul>
+  </div>
+
+  <script>
+    // console.log($());
+    var htm = '<div>我是div</div>';
+    // $('#box').append(htm)
+    // $('#box').prepend(htm)
+    // $('#box').after(htm)
+    $('#box').before(htm)
+  </script>
+</body>
+</html>

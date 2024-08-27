@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jQuery.js"></script>
+</head>
+<body>
+  <div>hello1</div>
+  <div>hello2</div>
+  <div>hello3</div>
+  <div>hello4</div>
+  
+  <script>
+    //静态方法： 不需要实例化就可以调用的方法
+
+    // class Person{
+    //   static info(){}
+    // }
+
+    // Person.info()
+
+    var obj = {
+      name: '张三',
+      age: 18
+    }
+
+    // 调用静态方法 each(遍历的对象/数组，处理函数(key/index，value/item))
+    $.each(obj, function(key, value){
+      console.log(key, value);
+    })
+
+    // map() 方法调用
+    var arr = [1, 2, 3, 4, 5]
+    var newArr = $.map(arr, function(item, index){
+      return item * 2
+    })
+    console.log(newArr);
+
+    // 不是静态方法，filter() 调用 ： 返回元素
+    // var newArr2 = $.filter(arr, function(item, index){
+    //   return item > 3
+    // })
+    // console.log(newArr2);
+    //  需要注意的是 ，filter() 不是静态方法 ，需要实例化对象才能调用
+    $('div').filter(function(index, item){
+      console.log(index, item);
+    })
+
+    // toArray() 方法调用  不是静态方法，需要实例化调用
+    console.log($('div').toArray());
+
+  </script>
+</body>
+</html>

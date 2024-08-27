@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jQuery.js"></script>
+</head>
+<body>
+  
+  <script>
+    // param() : 序列化对象
+    var user = {
+      name:'zhangsan',
+      age:18,
+      sex:'男'
+    }
+
+    console.log($.param(user));
+
+    // parseJSON() : 将JSON字符串转换为对象
+    var str = '{"name":"zhangsan","age":18,"sex":"男"}';
+    console.log($.parseJSON(str));
+    console.log(JSON.parse(str));
+
+    // trim() : 去除字符串两端的空格
+    var str = '  hello  world  ';
+    console.log(str);
+    console.log(str.trim());
+    console.log($.trim(str));
+
+
+  </script>
+</body>
+</html>

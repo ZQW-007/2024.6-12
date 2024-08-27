@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #load {
+        width: 200px;
+        height: 200px;
+        display: none;
+        background-color: #ccc;
+      }
+    </style>
+    <script src="./jQuery.js"></script>
+  </head>
+  <body>
+    <div id="load">请求中</div>
+    <button id="btn">发送请求</button>
+
+    <script>
+      $("#btn").click(function () {
+        //请求开始的时候 请求框展示处理
+        // $("#load").ajaxStart().show();
+        
+        // // 请求结束之后调用 隐藏请求框
+        // $("#load").ajaxStop().hide();
+        $(document).ajaxStart(function () {
+          $("#load").show();
+        }).ajaxStop(function () {
+          $("#load").hide()
+        })
+        $.ajax({
+          url: "https://dog.ceo/api/breeds/list/all",
+          type: "get",
+          // data:{name:'zs',age:18},
+          success: function (res) {
+            console.log(res);
+          },
+          dataType: "json",
+        });
+      });
+    </script>
+  </body>
+</html>

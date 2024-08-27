@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jQuery.js"></script>
+</head>
+<body>
+  
+  <script>
+    //$.ajax({}) 参数
+    //1. url: 请求的地址
+    //2. type: 请求的方式 GET/POST
+    //3. data: 要发送的数据
+    //4. success: 成功的回调函数
+    //5. dataType: 返回的数据类型
+   
+    //get无参
+    //xmlHttpRequest var xhr = new XMLHttpRequest();
+
+    var baseUrl = 'https://dog.ceo/api/breeds/list/all'
+    $.ajax({
+      url:'https://dog.ceo/api/breeds/list/all',
+      type:'get',
+      // data:{name:'zs',age:18},
+      success:function(res){
+        console.log(res)
+      },
+      dataType:'json'
+    })
+
+    //get有参
+    $.ajax(baseUrl,{
+      type:'get',
+      data:{
+        name:'zhangsan'
+      },
+      success:function(res){
+        console.log(res)
+      }
+    })
+
+    //post
+    $.ajax(baseUrl,{
+      // 请求的方法
+      // type:'post',
+      method:'post',
+      // 参数
+      data:JSON.stringify({
+        name:'zhangsan'
+      }),
+      // 成功的响应
+      success:function(res){
+        console.log(res)
+      },
+      // 失败的响应
+      error:function(err){
+        console.log(err);
+      }
+    })
+  </script>
+</body>
+</html>
