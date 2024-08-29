@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jQuery.js"></script>
+</head>
+<body>
+  <!-- src: 视频的地址  路径（网络/本地 相对路径和绝对路径）-->
+  <!-- 相对路径 ：相对于哪里？ 相对于本文件的路径。 绝对路径：从盘符开始 -->
+  <video id="vid" src="C:\Users\Administrator\Desktop\day08-1.mp4" controls autoplay muted width="500" height="300" loop></video>
+
+  <button id="playBtn">播放</button>
+  <button id="stopBtn">暂停</button>
+
+  <!-- audio 元素： 音频元素 -->
+  <audio src="C:\Users\Administrator\Desktop\day08-1.mp4" controls autoplay loop></audio>
+
+  <!-- 添加不同类型的视频 -->
+  <video>
+    <source src="C:\Users\Administrator\Desktop\day08-1.mp4" type="video/mp4">
+    <source src="C:\Users\Administrator\Desktop\day08-1.mp4" type="video/ogg">
+    <!-- <source src="C:\Users\Administrator\Desktop\day08-1.mp4" type="video/ogg"> -->
+  </video>
+  <script>
+    // 获取video元素
+    // var video = document.querySelector('video');
+    var video = document.getElementById('vid');
+    console.log(video);
+    // video.play(); // 播放
+    // video.pause(); // 暂停
+    // video.load(); // 重新加载
+    // video.currentTime = 10; // 设置播放时间
+    // video.volume = 0.5; // 设置音量
+
+    $('#playBtn').click(function(){
+      video.play()
+    })
+    $('#stopBtn').click(function(){
+      video.pause()
+    })
+  </script>
+</body>
+</html>

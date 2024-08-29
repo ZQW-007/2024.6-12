@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jQuery.js"></script>
+</head>
+<body>
+  <button id="btn">发送请求</button>
+  
+  <script>
+    $('#btn').click(function(){
+      // 发送请求 参数 ：url,[data],[successCallback],[dataType]
+      // $.get('https://dog.ceo/api/breeds/list/all',successCallback)
+
+      // function successCallback(data){
+      //   console.log(data)
+      // }
+      $.get('https://dog.ceo/api/breeds/list/all',{
+        name:'zhangsan',
+        age:18
+      },successCallback)
+      
+      function successCallback(data){
+        console.log(data)
+      }
+
+    })
+
+    // 速写接口 post请求
+    $.post('https://dog.ceo/api/breeds/list/all',{
+      name:'zhangsan',
+      age:18
+    },successCallback)
+
+    function successCallback(data){
+      console.log(data)
+    }
+
+    // getJSON() 请求 
+    $.getJSON('https://dog.ceo/api/breeds/list/all',{参数},successCallback.done().fail().always())
+
+    function successCallback(data){
+      console.log(data)
+    }
+  </script>
+</body>
+</html>

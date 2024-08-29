@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jQuery.js"></script>
+</head>
+<body>
+  
+  <div id="box"></div>
+
+  <div id="box1"></div>
+
+  <script>
+    //load() 方法可以从服务器中加载页面到指定元素中
+    //load(url,[data],[callback])
+    // 加载文本
+    $('#box').load('./test.txt')
+
+    // 加载html
+    $('#box1').load('./test.html')
+  </script>
+</body>
+</html>

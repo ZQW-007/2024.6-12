@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <!-- 新增的type类型：
+    email、url、number、range、date、month、week、time、datetime、datetime-local
+  -->
+  <form action="#">
+    <input type="email" placeholder="请输入邮箱">
+    <input type="url" placeholder="请输入网址">
+    <input type="number" step="0.5" placeholder="请输入数字">
+    <input type="date" name="" id="">
+    <input type="datetime-local" name="" id="">
+
+    <input type="submit" value="提交">
+  </form>
+
+  <!-- 自定义属性 -->
+
+  <div id="box" data-msg="hello world">
+    自定义属性测试
+  </div>
+
+  <script>
+    var box = document.getElementById('box')
+    // 获取自定义属性的值 元素.dataset.属性名
+    console.log(box.dataset.msg)
+  </script>
+</body>
+</html>

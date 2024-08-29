@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./jQuery.js"></script>
+</head>
+<body>
+  
+  <script>
+    // ajax请求成功后，会自动调用success函数
+    $.ajax({
+      url: 'http://localhost:3000/ajax',
+      // success: function(res) {
+      //   console.log(res);
+      // }
+    })
+    // ajaxSuccess函数是jQuery提供的一个回调函数，当ajax请求成功后，会自动调用该函数
+    // ajaxSuccess函数的参数就是ajax请求成功后返回的数据
+    $.ajaxSuccess(function(res) {
+      console.log(res);
+    })
+
+    // ajaxError函数是jQuery提供的一个回调函数，当ajax请求失败后，会自动调用该函数
+    // ajaxError函数的参数就是ajax请求失败后返回的错误信息
+    $.ajaxError(function(err) {
+      console.log(err);
+    })
+
+    // ajaxComplete函数是jQuery提供的一个回调函数，当ajax请求完成（无论成功还是失败）后，会自动调用该函数
+    // ajaxComplete函数的参数就是ajax请求完成后的数据或错误信息
+    $.ajaxComplete(function(res) {
+      console.log(res);
+    })
+
+    
+  </script>
+  </script>
+</body>
+</html>
