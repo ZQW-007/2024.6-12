@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="cv" width="300" height="200"></canvas>
+
+    <script>
+      var cv = document.getElementById("cv");
+      var cxt = cv.getContext("2d");
+      cxt.moveTo(50, 100);
+      cxt.lineTo(150, 100);
+      cxt.setLineDash([5]);
+      cxt.stroke();
+
+      cxt.moveTo(50, 50);
+      cxt.lineTo(150, 50);
+      cxt.setLineDash([5, 10]);
+      cxt.stroke();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="cv" width="500" height="500"></canvas>
+
+  <script>
+    var cv = document.getElementById("cv")
+    var cxt = cv.getContext('2d')
+
+    // 调用 beginPath()
+    cxt.beginPath()
+
+    // 调用 arc() 方法绘制圆
+    cxt.arc(100, 100, 50, 0, Math.PI * 2)
+
+    // 调用 stroke() 方法绘制圆的边框
+    cxt.closePath()
+    cxt.stroke()
+
+    // 调用 fill() 方法填充圆
+    // cxt.fill()
+  </script>
+</body>
+</html>

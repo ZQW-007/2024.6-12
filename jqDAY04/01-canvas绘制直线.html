@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 可以通过css设置宽高 -->
+  <!-- 如果使用css去设置canvas宽高，绘制图形就会拉伸 -->
+  <style>
+    #cv {
+      /* width: 500px;
+      height: 500px; */
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <!-- canvas 有默认的宽高 ， 300*150 -->
+
+  <!--  canvas 标签 有width 和 height可以设置宽度和高度 -->
+  <canvas id="cv" width="500" height="300"></canvas>
+
+  <script>
+    // 获取canvas 元素
+    var cv = document.getElementById('cv')
+    // 获取上下文
+    var ctx = cv.getContext('2d')
+    // 绘制起点
+    ctx.moveTo(100,100)
+    // 绘制终点
+    ctx.lineTo(200,100)
+    // 绘制
+    ctx.stroke()
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <canvas id="cv" width="500" height="500"></canvas>
+
+  <script>
+    const cv = document.getElementById('cv')
+    const ctx = cv.getContext('2d')
+
+    // 线条样式: lineWidth:线条的宽度 lineStyle:线的颜色 lineCap：线帽：默认: butt; 圆形: round; 方形: square。
+    ctx.lineWidth = 10
+    ctx.strokeStyle = 'red'
+    ctx.lineCap = 'round'
+    // ctx.beginPath()
+    ctx.moveTo(100, 100)
+    ctx.lineTo(200, 100)
+    ctx.stroke()
+
+    // ctx.strokeStyle = 'blue'
+    ctx.moveTo(200,200)
+    ctx.lineTo(300,200)
+    ctx.stroke()
+  </script>
+</body>
+</html>

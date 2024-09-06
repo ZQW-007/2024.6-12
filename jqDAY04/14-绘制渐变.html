@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <!-- <script>
+      var cv = document.getElementById("canvas");
+      var cxt = cv.getContext("2d");
+
+      // 创建一个渐变对象
+      var cg = cxt.createLinearGradient(0, 0, 400, 400);
+      // 给渐变对象添加渐变色
+      cg.addColorStop(0, "red");
+      cg.addColorStop(0.2, "orange");
+      cg.addColorStop(0.4, "tomato");
+      cg.addColorStop(0.6, "green");
+      cg.addColorStop(0.8, "blue");
+      cg.addColorStop(1, "gray");
+      // 把渐变对象给到样式填充图形
+      cxt.fillStyle = cg;
+      // 绘制图形
+      cxt.fillRect(0, 0, 400, 400);
+    </script> -->
+
+    <!-- 径向渐变 -->
+    <script>
+      var cv = document.getElementById("canvas")
+      var cxt = cv.getContext("2d")
+  
+      var cg = cxt.createRadialGradient(150,150,50,150,150,150);
+      // 给渐变对象添加渐变色
+      cg.addColorStop(0, 'red');
+      cg.addColorStop(0.2, 'orange');
+      cg.addColorStop(0.4, 'tomato');
+      cg.addColorStop(0.6, 'green');
+      cg.addColorStop(0.8, 'blue');
+      cg.addColorStop(1, 'gray');
+      // 把渐变对象给到样式填充图形
+      cxt.fillStyle = cg;
+      // 绘制图形
+      cxt.fillRect(0, 0, 300, 300);
+    </script>
+  </body>
+</html>

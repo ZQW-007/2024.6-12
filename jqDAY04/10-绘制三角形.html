@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="cv" width="300" height="200"></canvas>
+
+    <script>
+      const cv = document.getElementById("cv");
+      const cxt = cv.getContext("2d");
+
+      cxt.lineWidth = 5;
+      cxt.moveTo(50, 50);
+      cxt.lineTo(300, 150);
+      cxt.lineTo(50, 150);
+
+      // 注意点：如果使用 lineTo 闭合图形，是不能很好闭合拐角位的。
+      //cxt.lineTo(50, 50); // 闭合
+      cxt.closePath();
+      cxt.stroke();
+    </script>
+  </body>
+</html>

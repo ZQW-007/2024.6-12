@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="cv" width="800" height="800"></canvas>
+<script>
+    var cv = document.getElementById("cv")
+    var cxt = cv.getContext('2d')
+
+    // 1 创建 Image 对象
+    const image = new Image()
+
+    // 2 引入图片
+    image.src = './assets/11.png'
+
+    // 3 等待图片加载完成
+    image.onload = () => {
+      // 4 使用 drawImage() 方法渲染图片
+      cxt.drawImage(image, 30, 30,200,160)
+    }
+</script>
+</body>
+</html>
