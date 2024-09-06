@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      width: 400px;
+      height: 400px;
+      border: 1px solid #000;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div id="box" ondragover="allowDrop(event)"></div>
+  <img id="img" draggable="true" src="./images/12.png" alt="" width="380" height="380">
+
+  <script>
+    // 获取box元素
+    var box = document.getElementById('box')
+    // 获取img元素
+    var img = document.getElementById('img')
+    // 设置img元素的拖放开始事件
+    img.ondragstart = function (e) {
+      e.dataTransfer.setData('text/plain', e.target.id)
+    }
+    // 设置box元素的拖放结束事件
+    box.ondrop = function (e) {
+      e.preventDefault()
+      var id = e.dataTransfer.getData('text/plain')
+      e.target.appendChild(document.getElementById(id))
+    }
+    // 设置box元素的拖放事件
+    function allowDrop(e) {
+      e.preventDefault()
+    }
+  </script>
+</body>
+</html>
