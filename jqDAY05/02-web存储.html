@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/js-cookie/2.2.1/js.cookie.js"></script>
+</head>
+<body>
+  
+  <button onclick="removeCookie()">删除cookie</button>
+
+  <script>
+    // 设置过期时间为7天的cookie
+    Cookie.set('name','zhangsan',{expires:7})
+    // 获取cookie
+    console.log(Cookie.get('name'))
+    // 删除cookie
+    // Cookie.remove('name')
+    function removeCookie(){
+      Cookie.remove('name')
+    }
+  </script>
+</body>
+</html>

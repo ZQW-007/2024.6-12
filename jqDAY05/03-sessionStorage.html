@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="saveData()">存储数据</button>
+  <button onclick="getData()">获取数据</button>
+  <button onclick="removeData()">删除数据</button>
+  <button onclick="clearData()">清空数据</button>
+  
+  <script>
+    // sessionStorage 生命周期为关闭浏览器窗口，关闭窗口后数据被清除
+
+    function saveData() {
+      // setItem(key, value) 存储数据
+      sessionStorage.setItem('name', '张三')
+      sessionStorage.setItem('age', 18)
+    }
+    
+    function getData() {
+      console.log(sessionStorage.getItem('name'))
+      console.log(sessionStorage.getItem('age'))
+    }
+
+    function removeData() {
+      sessionStorage.removeItem('name')
+    }
+
+    function clearData() {
+      sessionStorage.clear()
+    }
+  </script>
+</body>
+</html>
