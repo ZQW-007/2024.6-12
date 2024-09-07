@@ -1,0 +1,34 @@
+<!-- 图表上部分right1  top10商品销售趋势-->
+<div>
+  <div class="cb_title">
+    <!-- 图标 -->
+    <div class="icon"></div>
+    <!-- 文字 -->
+    <div class="text">top10商品销售趋势</div>
+  </div>
+  <div id="right1_area" class="plot_box"></div>
+</div>
+
+<!-- 获取数据绘制图表 -->
+<script>
+    const right1Data = [
+      { timePeriod: '2021-01', value: 120 },
+      { timePeriod: '2021-02', value: 200 },
+      { timePeriod: '2021-03', value: 150 },
+      { timePeriod: '2021-04', value: 80 },
+      { timePeriod: '2021-05', value: 70 },
+      { timePeriod: '2021-06', value: 110 },
+      { timePeriod: '2021-07', value: 90 },]
+    const area = new Area('right1_area', {
+      data:right1Data,
+      xField: 'timePeriod',
+      yField: 'value',
+      meta: {
+        timePeriod: {
+          range: [0, 1],
+        },
+      },
+    });
+    area.render();
+
+</script>

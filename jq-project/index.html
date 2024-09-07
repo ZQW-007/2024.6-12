@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入jquery -->
+  <script src="./assets/jquery.min.js"></script>
+  
+  <!-- 引入百度地图API -->
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=QIDtjy4QXbjQ12Y3EsNSb06dt0SsrcVk"></script>
+
+  <!-- 引入g2plot -->
+  <script src="https://unpkg.com/@antv/g2plot@latest/dist/g2plot.min.js"></script>
+
+  <!-- 引入外部样式表 -->
+  <link rel="stylesheet" href="./css/index.css">
+
+  <script>
+    const {Pie,Bar,Line,Column,Bullet,Area,Radar,Liquid} = G2Plot
+    $(function(){
+      $(".left1").load("./html/left1.html")
+      $(".left2").load("./html/left2.html")
+      $(".right1").load("./html/right1.html")
+      $(".right2").load("./html/right2.html")
+      $(".bottom1").load("./html/bottom1.html")
+      $(".bottom2").load("./html/bottom2.html")
+      $(".bottom3").load("./html/bottom3.html")
+      $(".bottom4").load("./html/bottom4.html")
+      $(".charts_map").load("./html/content.html")
+    })
+  </script>
+</head>
+<body>
+  <!-- 搭建页面结构 -->
+  <div class="container">
+    
+    <!-- 标题部分 -->
+    <div class="header">
+      <div class="header_title">无人零售车销售分析平台</div>
+    </div>
+
+    <!-- 图表部分 -->
+    <div class="charts">
+      <!-- 图表上部分 -->
+      <div class="charts_top">
+        <!-- 左侧图表 -->
+        <div class="charts_left">
+          <!-- 左侧第一个图表 -->
+          <div class="left1 chart_box"></div>
+          <div class="left2 chart_box"></div>
+        </div>
+        <!-- 地图区域 -->
+        <div class="charts_map"></div>
+        <!-- 右侧图表 -->
+        <div class="charts_right">
+          <div class="right1 chart_box"></div>
+          <div class="right2 chart_box"></div>
+        </div>
+      </div>
+      <!-- 图表下部分 -->
+      <div class="charts_bottom">
+        <!-- 下部分四个图表 -->
+        <div class="bottom1 chart_box"></div>
+        <div class="bottom2 chart_box"></div>
+        <div class="bottom3 chart_box"></div>
+        <div class="bottom4 chart_box"></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

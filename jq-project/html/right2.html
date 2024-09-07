@@ -1,0 +1,34 @@
+<!-- 图表上部分right2 地区销售占比 -->
+<div>
+  <div class="cb_title">
+    <!-- 图标 -->
+    <div class="icon"></div>
+    <!-- 文字 -->
+    <div class="text">地区销售占比</div>
+  </div>
+  <div id="right2_radar" class="plot_box"></div>
+</div>
+
+<!-- 获取数据绘制图表 -->
+<script>
+  const data = [
+    { name: '吕梁', star: 10371 },
+    { name: '太原', star: 7380 },
+    { name: '大同', star: 7414 },
+    { name: '晋中', star: 2140 },
+    { name: '阳泉', star: 660 },
+  ];
+  const radarPlot = new Radar('right2_radar', {
+    data: data.map((d) => ({ ...d, star: Math.sqrt(d.star) })),
+    xField: 'name',
+    yField: 'star',
+    meta: {
+      star: {
+        min: 0,
+        nice: true,
+      },
+    },
+    area: {},
+  });
+  radarPlot.render();
+</script>
