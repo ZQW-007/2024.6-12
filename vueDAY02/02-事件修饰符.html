@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <script src='../day01-2/vue.2.7.15.js'></script>
+</head>
+<body>
+  <div id='app'>
+    <form action="#">
+      <input type="text">
+      <input type="submit" value="提交" @click.prevent="submit">
+    </form>
+
+    <div>{{count}}</div>
+    <button @click.once="add">只会执行一次</button>
+  </div>
+
+  <script>
+    new Vue({
+      el:'#app',
+      data:{
+        count:10
+      },
+      methods: {
+        submit(){
+          console.log('提交表单');
+        },
+        add(){
+          this.count++
+        }
+      },
+    })
+  </script>
+</body>
+</html>

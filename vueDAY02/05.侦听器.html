@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <script src='../day01-2/vue.2.7.15.js'></script>
+</head>
+
+<body>
+  <div id='app'>
+    <!-- <input type="text" v-model.lazy="testData">
+    {{testData}} -->
+    请输⼊⽤户名：<input type="text" v-model.lazy="username">
+    {{tip}}
+  </div>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      // data:{
+      //   testData:"测试数据"
+      // },
+      // watch:{
+      //   testData(newVal,oldVal){
+      //     console.log("新值：",newVal);
+      //     console.log("旧值：",oldVal);
+      //   }
+      // }
+      data: {
+        username: '',
+        tip: ''
+      },
+      // 侦听器
+      watch: {
+        username(val) {
+          this.tip = '正在验证...'
+          // 使⽤延时函数模拟异步操作
+          setTimeout(() => {
+            if (val == 'admin') {
+              this.tip = '当前⽤户名已存在,请更换⽤户名!'
+            } else {
+              this.tip = '当前⽤户名可以使⽤!'
+            }
+          }, 2000);
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

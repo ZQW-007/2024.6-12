@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>========app==============</div>
+        <my-component></my-component>
+        <div>========app==============</div>
+        <my-component1></my-component1>
+        <div>========app==============</div>
+        <div>{{msg}}</div>
+    </div>
+
+    <template id="my-component">
+        <div>
+            <h2>全局注册组件</h2>
+        </div>
+    </template>
+
+    <template id="my-component1">
+        <div>
+            <div>
+                <h3>局部注册组件111</h3>
+            </div>
+            <div>{{msg1}}</div>
+            <my-component2></my-component2>
+        </div>
+    </template>
+
+    <template id="my-component2">
+        <div>
+            <div>
+                <h3>局部注册组件222</h3>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        //全局注册组件
+        Vue.component('my-component', {
+            template: '#my-component'
+        })
+        new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello vue'
+            },
+            components: {
+                //局部注册组件
+                'my-component1': {
+                    template: '#my-component1',
+                    data() {
+                        return {
+                            msg1: 'hello vue1'
+                        }
+                    },
+                    components: {
+                        'my-component2': {
+                            template: '#my-component2',
+                    }
+                }
+            }
+        }})
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <script src='../day01-2/vue.2.7.15.js'></script>
+</head>
+<body>
+  <div id='app'>
+    {{count}}
+    <div>
+      <!-- v-on 指令用来绑定事件 -->
+      <!-- <button v-on:click="add(10)">+1</button> -->
+      <!-- <button v-on:click="add">+1</button> -->
+      <button v-on:click="add(10,$event)">+1</button>
+      <!-- 语法糖 @ -->
+      <button @click="count--">-1</button>
+    </div>
+  </div>
+
+  <script>
+    new Vue({
+      el:'#app',
+      data:{
+        count:0
+      },
+      // 在vue中事件要声明要methods中去
+      methods: {
+        // 1.不传递数据
+        // 2. 需要传递
+        // 3. 事件对象，--需要传递参数
+        // add(num){
+        //   console.log(num);
+        //   this.count+=num
+        // }
+
+        // add(event){
+        //   console.log(event);
+        // }
+
+        add(num,event){
+          console.log(num,event);
+        }
+      },
+    })
+  </script>
+
+  <!-- <script setup>
+  import {ref} from 'vue'
+  const count = ref(0)
+  
+  const add = ()=>{
+    count.value
+  }
+  </script> -->
+</body>
+</html>

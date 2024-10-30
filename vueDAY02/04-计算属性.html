@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <script src='../day01-2/vue.2.7.15.js'></script>
+</head>
+<body>
+  <!-- 计算属性 -->
+  <div id='app'>
+    {{firstName}} {{lastName}}
+
+    <div>
+      {{firstName}} {{lastName}}
+    </div>
+
+    <div>
+      fullname计算属性1:{{fullName}}
+    </div>
+    <div>
+      fullname计算属性2:{{fullName}}
+    </div>
+    <div>
+      fullname methods1:{{mFullName()}}
+    </div>
+    <div>
+      fullname methods2:{{mFullName()}}
+    </div>
+    <div>
+      fullname methods3:{{mFullName()}}
+    </div>
+  </div>
+
+  <script>
+    new Vue({
+      el:'#app',
+      data:{
+        firstName:"jack",
+        lastName:'tom'
+      },
+      methods: {
+        mFullName(){
+          console.log('methods中调用');
+          return this.firstName + ' ' + this.lastName
+        }
+      },
+      computed:{
+        fullName(){
+          console.log('computed中调用');
+          return this.firstName + ' ' + this.lastName
+        }
+      }
+    })
+  </script>
+</body>
+</html>

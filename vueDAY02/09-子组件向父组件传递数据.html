@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{msgg}}</h1>
+        <my-component @click="getData"></my-component>
+    </div>
+
+    <template id="my-component">
+        <div>
+            <div>
+                {{msg}}
+            </div>
+            <div>
+                <button @click="handleClick">点击</button>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        // 子组件向父组件传递数据
+        // 1.子组件向父组件传递数据，需要使用自定义事件
+        // 2.子组件向父组件传递数据，需要使用$emit()方法
+        // 3.子组件向父组件传递数据，需要使用v-on指令
+        // 4.子组件向父组件传递数据，需要使用$on()方法
+        // 5.子组件向父组件传递数据，需要使用$off()方法
+        // 6.子组件向父组件传递数据，需要使用$once()方法
+        // 7.子组件向父组件传递数据，需要使用$destroy()方法
+        // 8.子组件向父组件传递数据，需要使用$nextTick()方法
+        // 9.子组件向父组件传递数据，需要使用$set()方法
+        // 10.子组件向父组件传递数据，需要使用$delete()方法
+        // 11.子组件向父组件传递数据，需要使用$watch()方法
+
+        Vue.component('my-component', {
+            template: '#my-component',
+            data() {
+                return {
+                    msg: '子组件向父组件传递数据'
+                }
+            },
+            methods: {
+                handleClick() {
+                    //参数·1：事件名称，参数2：传递的数据
+                    this.$emit('click', this.msg)
+                }
+            }
+        })
+
+        new Vue({
+            el: '#app',
+            data: {
+                msgg: ''
+            },
+            methods: {
+                getData(data) {
+                    console.log(data)
+                    this.msgg = data
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

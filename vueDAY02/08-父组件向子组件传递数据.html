@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+       <h2>{{msg}}</h2>
+       <my-component></my-component>
+    </div>
+
+    <template id="my-component">
+        <div>
+            <h2>我是全局注册子组件</h2>
+            <div>{{cmsg}}</div>
+        </div>
+    </template>
+
+    <script>
+        Vue.component('my-component',{
+            template:'#my-component',
+            //父组件向子组件传值
+            props:{
+                cmsg:{
+                    //限制类型
+                    type:[Number,String,Array],
+                    //限制必传
+                    required:true,
+                    //默认值
+                    default:'父组件的数据没有传递'
+            }
+    }})
+    new Vue({
+        el:'#app',
+        data:{
+            msg:'父组件的数据'
+        },
+        
+    })
+       
+    </script>
+</body>
+
+</html>
