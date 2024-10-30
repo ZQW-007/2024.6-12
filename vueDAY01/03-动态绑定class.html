@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active{
+      color: red;
+    }
+    .active1{
+      color: blue;
+    }
+    .line{
+      font-size: 28px;
+    }
+  </style>
+  <script src="./vue.2.7.8.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- 对象的方式绑定class -->
+    <div v-bind:class="{'active':isActive,'line':isLine}">{{msg}}</div>
+
+    <!-- <button @click="change">changeColor</button> -->
+
+    <!-- 数组的方式绑定class -->
+
+    <div :class="[myClass,'line']"> {{msg}} </div>
+  </div>
+
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        msg:"hello vue!",
+        myClass:"active1",
+        isActive:true,
+        isLine:true
+      },
+      // methods: {
+      //   change(){
+      //     this.isActive = false
+      //   }
+      // },
+    })
+  </script>
+</body>
+</html>

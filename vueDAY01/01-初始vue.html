@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.7.8/compiler-sfc.js"></script> -->
+  <!-- 1. 导入Vue -->
+  <script src="./vue.2.7.8.js"></script>
+</head>
+<body>
+  <!-- 2. 需要一个dom结构去挂载vue实例 -->
+  <div id="app">
+
+    <!-- {{}} ： mustach语法 胡子 胡须 -->
+    <h3>{{msg}}</h3>
+    <!-- v-html  -->
+    <div v-html="myEle"></div>
+
+    <!-- 实现简单的计算 -->
+    <h2>{{count * 2}}</h2>
+  </div>
+
+  <script>
+    // 初始化一个vue实例
+    new Vue({
+      // vue实例挂载到app上
+      el:'#app',
+      // 数据源
+      data:{
+        msg:"hello vue",
+        myEle:"<h2>我是标题</h2>",
+        count:10
+      }
+      // vue-cli  data(){reutrn{}}
+
+      //vue3 ref() reactive()  const count = ref(10)
+    })
+  </script>
+</body>
+</html>

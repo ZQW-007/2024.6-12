@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./vue.2.7.8.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(movie,index) in movies" :key="movie.id">{{index}}--{{movie.name}}</li>
+    </ul>
+  </div>
+
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        movies:[
+          {id:1001,name:'沸羊羊'},
+          {id:1002,name:'xxxx1'},
+          {id:1005,name:"1212321"},
+          {id:1003,name:'xxxx2'},
+          {id:1004,name:'xxxx3'}
+        ]
+      }
+    })
+
+    // <template>html</template>
+    // <script> 
+
+  </script>
+</body>
+</html>
