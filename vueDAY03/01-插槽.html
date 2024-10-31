@@ -11,11 +11,17 @@
 <body>
     <div id="app">
         <h1>123</h1>
-
-        <my-component v-slot="slotProps">
-            {{slotProps.msg}}
+        <my-component>
             <template v-slot:left>
                 <div>插槽在左边</div>
+            </template>
+            <!-- v-slot:default="slotProps"  默认插槽，可以简写为v-slot="slotProps" -->
+            <!-- slotProps是插槽的属性，可以自定义，类似于父组件向子组件传递数据 -->
+            <!-- 写在template标签中 -->
+            <template v-slot:default="slotProps">
+                <div>
+                    {{slotProps.msg}}
+                </div>
             </template>
             <template v-slot:right>
                 <div>插槽在右边</div>
