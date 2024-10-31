@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>123</h1>
+
+        <my-component v-slot="slotProps">
+            {{slotProps.msg}}
+            <template v-slot:left>
+                <div>插槽在左边</div>
+            </template>
+            <template v-slot:right>
+                <div>插槽在右边</div>
+            </template>
+        </my-component>
+    </div>
+
+    <template id="my-component">
+        <div class="box">
+            <div>
+                <slot name="left"></slot>
+            </div>
+            <div>
+                <slot :msg="msg"></slot>
+            </div>
+            <div>
+                <slot name="right"></slot>
+            </div>
+        </div>
+    </template>
+    <script>
+        new Vue({
+            el: '#app',
+            components: {
+                'my-component': {
+                    template: '#my-component',
+                    data() {
+                        return {
+                            msg: '123'
+                        }
+                    },
+                },
+            },
+        })
+    </script>
+</body>
+
+</html>
