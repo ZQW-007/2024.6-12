@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- script中定义指令，这里只需要在元素上加上v-指令名称即可，后面可以跟参数 -->
+        <!-- 指令名称：{指令的钩子函数} -->
+        <p v-hello="'blue'">{{msg}}</p>
+        <my-component></my-component>
+    </div>
+
+    <template id="my-template">
+        <div>
+            {{msg1}}
+        </div>
+    </template>
+
+    <script>
+        Vue.component('my-component', {
+            template: '#my-template',
+            data() {
+                return {
+                    msg1: 'hello world'
+                }
+            }
+        })
+        new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello world'
+            },
+            directives: {
+                // 指令名称：{指令的钩子函数}
+                // hello: {
+                //     // 指令的钩子函数，绑定到元素上的时候，会立即执行bind函数，只执行一次
+                //     bind: function (el,binding) {
+                //         el.style.color = binding.value
+                //     },
+                //     updated(el,binding) {
+                //         el.style.color = binding.value
+                //     },
+                // }
+                //函数形式，可以省略bind
+                hello: function (el, binding) {
+                    el.style.color = binding.value}
+            }
+        })
+    </script>
+</body>
+
+</html>

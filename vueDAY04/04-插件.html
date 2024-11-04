@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        // 自定义插件定义
+        const MyPlugin = {
+            install: function (Vue, options) {
+                // 添加全局方法
+                Vue.myMethod = function () {
+                    console.log('my method')
+                }
+            }
+        }
+        // 安装自定义插件
+        Vue.use(MyPlugin)
+        new Vue({
+            el: '#app',
+            // 在created钩子中调用全局方法
+            created() {
+                Vue.myMethod()
+            }
+        })
+    </script>
+</body>
+
+</html>
