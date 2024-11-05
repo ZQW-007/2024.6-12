@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <script src="./vue-router.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="goTo1">div1</button>
+        <button @click="goTo2">div2</button>
+        <router-view></router-view>
+    </div>
+    <template id="temp1">
+        <div>
+            我是div1
+        </div>
+    </template>
+    <template id="temp2">
+        <div>
+            我是div2
+            <button @click="back">返回</button>
+        </div>
+    </template>
+    <script>
+        const div1 = { template: '#temp1'}
+        const div2 = { template: '#temp2' ,
+        methods:{
+                back(){
+                    router.go(-1)
+                }
+            }
+        }
+        const router = new VueRouter({
+            routes: [
+                { path: '/div1', component: div1 },
+                { path: '/div2', component: div2 }
+            ]
+        })
+        new Vue({
+            el: '#app',
+            methods: {
+                goTo1() {
+                    router.push('/div1')
+                },
+                goTo2() {
+                    router.push('/div2')
+                },
+            },
+            router
+        })
+    </script>
+</body>
+
+</html>

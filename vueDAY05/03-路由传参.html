@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <script src="./vue-router.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="goHome">跳转到home</button>
+        <button @click="goAbout">跳转到about</button>
+        <router-view></router-view>
+    </div>
+    <template id="home">
+        <div>
+            home页面
+            {{msg}}---{{count}}
+            <button @click="goAbout">跳转到about</button>
+        </div>
+    </template>
+    <template id="about">
+        <div>
+            about页面
+            <!-- {{$route.params.count}} -->
+            {{$route.query.count}}
+        </div>
+        </div>
+    </template>
+    <script>
+        const originPush = VueRouter.prototype.push
+        const originReplace = VueRouter.prototype.replace
+        VueRouter.prototype.push = function (location, reslove, reject) {
+            if (reslove && reject) {
+                originPush.call(this, location, reslove, reject)
+            } else {
+                originPush.call(this, location, () => { }, () => { })
+            }
+        }
+        VueRouter.prototype.replace = function (location, reslove, reject) {
+            if (reslove && reject) {
+                originReplace.call(this, location, reslove, reject)
+            } else {
+                originReplace.call(this, location, () => { }, () => { })
+            }
+        }
+
+        const Home = {
+            template: "#home",
+            data() {
+                return {
+                    msg: "数字",
+                    count: 10
+                }
+            },
+            methods: {
+                goAbout() {
+                    // this.$router.push({name:"about",params:{count:this.count}})
+                    this.$router.push({ path: "/about", query: { count: this.count } })
+                }
+            },
+        }
+        const About = {
+            template: "#about",
+        }
+        const router = new VueRouter({
+            routes: [
+                { path: "/home", component: Home, name: "home" },
+                { path: "/about", component: About, name: "about" }
+            ]
+        })
+        new Vue({
+            el: "#app",
+            methods: {
+                goHome() {
+                    this.$router.push("/home")
+                },
+                goAbout() {
+                    this.$router.push("/about")
+                }
+            },
+            router
+        })
+    </script>
+</body>
+
+</html>
